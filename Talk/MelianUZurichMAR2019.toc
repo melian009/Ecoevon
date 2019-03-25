@@ -1,0 +1,19 @@
+\babel@toc {swedish}{}
+\beamer@sectionintoc {1}{Motivation}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Eco-evolutionary networks}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Structural stability}{3}{0}{1}
+\beamer@subsectionintoc {1}{3}{Eco-evolutionary tangling}{4}{0}{1}
+\beamer@sectionintoc {2}{Questions}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Questions}{5}{0}{2}
+\beamer@sectionintoc {3}{Examples}{8}{0}{3}
+\beamer@subsectionintoc {3}{1}{Model system I}{8}{0}{3}
+\beamer@subsectionintoc {3}{2}{Model system II}{9}{0}{3}
+\beamer@sectionintoc {4}{Eco-evolutionary networks}{10}{0}{4}
+\beamer@subsectionintoc {4}{1}{Demographic and trait dynamics}{10}{0}{4}
+\beamer@subsectionintoc {4}{2}{Model abundance}{12}{0}{4}
+\beamer@subsectionintoc {4}{3}{Mean Abun and traits}{13}{0}{4}
+\beamer@subsectionintoc {4}{4}{Fluctuating selection}{14}{0}{4}
+\beamer@subsectionintoc {4}{5}{Fluctuating selection}{15}{0}{4}
+\beamer@sectionintoc {5}{Outlook}{16}{0}{5}
+\beamer@subsectionintoc {5}{1}{Outlook}{16}{0}{5}
+\beamer@subsectionintoc {5}{2}{thankyou}{20}{0}{5}
