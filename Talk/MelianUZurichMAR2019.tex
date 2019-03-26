@@ -5,7 +5,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\documentclass[handout,compress,green]{beamer}
 \RequirePackage{flashmovie}
-\documentclass[compress,pink]{beamer} 
+\documentclass[compress,pink]{beamer}
+\usetheme{boxes}
 %\hypersetup{pdfpagemode=FullScreen}%makes your presentation go automatically to full screen
 \usepackage[absolute,overlay]{textpos}
 \setlength{\TPHorizModule}{1mm}
@@ -40,12 +41,13 @@
 \usepackage{verbatim}
 \usepackage{multirow}
 \usepackage{blindtext}
+\usepackage{biblatex}
 
 \usetikzlibrary{arrows,shapes} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title Page Info %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\bibliography{MelianUZurichMAR2019.bib}
 
 \vspace{-8 in}
 \title{}\\
@@ -85,13 +87,41 @@ https://github.com/melian009
 \section{Motivation}
 
 %==========NOTES TALKS============================================================================================================
-%I will be using a variety of tools, but mostly a pdf and a Jupyter notebook with animations to gain intuition of comple processes
+%Gain intuition about biodiversity and eco evo feedbacks
 %=================================================================================================================================
 
 
+%Global map biodiversity gradient + biodiversity loss : causes? (3 slides)
+\subsection{Latitudinal biodiversity gradient}
+\frame{\frametitle{{\small}}
+  \begin{center}
+    \vspace{-0.25 in}
+  \hspace{-0.25 in}\includegraphics[height=7cm,width=11cm]{Figure1Mannion.pdf}
+\end{center}
+}
+
+\subsection{Heterogeneous biodiversity loss}
+\frame{\frametitle{{\small}}
+  \begin{center}
+    \vspace{-0.25 in}
+  \hspace{-0.25 in}\includegraphics[height=7cm,width=11cm]{BiodiversityLoss.pdf}
+\end{center}
+}
+
+\subsection{Architecture of ecosystems}
+\frame{\frametitle{{\small}}
+  \setbeamercolor{uppercol}{fg=black,bg=white}
+  \setbeamercolor{lowercol}{fg=black,bg=white}
+  \begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+\begin{center}
+  \hspace{-0.45 in}\includegraphics[height=6cm,width=11cm]{aecos.pdf}
+  \end{center}
+\end{beamerboxesrounded}
+}
+
 %It deals mostly with trait evolution -- rapid trait changes 
 \subsection{Eco-evolutionary networks}
-\frame{\frametitle{\small{Species are compossed by heterogeneous individuals}}
+\frame{\frametitle{}
   \vspace{0.25 in}
 \setbeamercolor{uppercol}{fg=black,bg=white}
 \setbeamercolor{lowercol}{fg=black,bg=white}
@@ -109,15 +139,6 @@ https://github.com/melian009
 \end{center}
 }
 
-\subsection{Eco-evolutionary tangling}
-\frame{\frametitle{\small{... meaning ecological and evolutionary dynamics might be tangled}}
-  \begin{center}
-\vspace{-0.2 in}
-\hspace{-0.5 in}\includegraphics[width=8cm]{cichlids.png}
-\end{center}
-}
-
-
 \section{Questions}
 \subsection{Questions}
 \frame{\frametitle{}
@@ -129,7 +150,34 @@ https://github.com/melian009
 \end{itemize}
 }
 
-\section{Examples}
+\section{Model systems}
+
+% ------------------------Cichlids-----------------------------------------------------------
+\subsection{Eco-evolutionary tangling I}
+\frame{\frametitle{\small{... radiations can be rapid}}
+  \begin{center}
+\vspace{-0.2 in}
+\hspace{-0.5 in}\includegraphics[width=9cm]{biogeographyradiations.png}
+\end{center}
+}
+
+
+\subsection{Eco-evolutionary tangling II}
+\frame{\frametitle{\small{... meaning ecological and evolutionary dynamics might be tangled}}
+    \vspace{-0.2 in}
+\begin{columns}
+    \begin{column}{6cm}
+    \hspace{0.25 in}\includegraphics[width=5cm]{LVictoria.jpg}
+    \end{column}
+      
+    \begin{column}{6cm}
+    \hspace{-0.25 in}\includegraphics[width=6cm]{cichlids.png}
+    \end{column}
+
+\end{columns}
+}
+%------------------------------------------------------------------------------------------
+
 
 %---------------------------Sticklebacks----------------------------------------------------
 \subsection{Model system I}
@@ -151,7 +199,25 @@ https://github.com/melian009
 
 %======================================================
 \subsection{Model system II}
-\frame{\frametitle{\small{Darwin's finches}}
+\frame{\frametitle{\small{Darwin's finches I}}
+\setbeamercolor{uppercol}{fg=black,bg=white}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+\begin{center}
+\vspace{0.1 in}
+\hspace{-2 in}\includegraphics[height=4cm,width=5cm]{BeakIslands.png}
+\end{center}
+\begin{center}
+\vspace{-1.75 in}
+\hspace{2 in}\includegraphics[height=6cm,width=5cm]{Darwinbeak.png}\footnotetext{{\Tiny Abzhanov, A., et. al
+    (2006). The calmodulin pathway and evolution of elongated beak morphology in Darwin's finches, Nature, 442:563-567.}}
+\end{center}
+\end{beamerboxesrounded}
+}
+
+
+\subsection{Model system II}
+\frame{\frametitle{\small{Darwin's finches II}}
 \vspace{0.25 in}
   \setbeamercolor{uppercol}{fg=black,bg=white}
 \setbeamercolor{lowercol}{fg=black,bg=white}
@@ -159,20 +225,43 @@ https://github.com/melian009
       \hspace{-0.15 in}\includegraphics[height=6cm,width=11cm]{darwinv1.pdf}
 \end{beamerboxesrounded}
 }
+
 %======================================================
 
 %Theoretical examples
 \section{Eco-evolutionary networks}
 
-\subsection{Demographic and trait dynamics}
-\frame{\frametitle{\small{}}
-\vspace{-1 in}
-\includegraphics[height=12cm,angle=90]{asymmetry.png}
+
+\subsection{Modeling strategies}
+\frame{\frametitle{}
+\setbeamercolor{uppercol}{fg=black,bg=white}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+\hspace{-0.5 in}\includegraphics[width=12cm]{TradeOffs.pdf}
+\end{beamerboxesrounded}
 }
 
+
+\subsection{Demographic and trait dynamics}
 \frame{\frametitle{\small{}}
-\vspace{-1 in}
-\includegraphics[height=12cm,angle=90]{Slide0.pdf}
+  \vspace{-1 in}
+  \begin{center}
+    \includegraphics[height=10cm,angle=90]{asymmetry.png}
+  \end{center}
+}
+
+\subsection{Demographic and trait dynamics}
+\frame{\frametitle{\small{}}
+  \vspace{-1 in}
+  
+  %\begin{block}{}
+  %{\small \cite{Andreazzi:2018}}
+  %\footnote{Footnotes are possiable as well}
+  %\end{block}
+
+  \begin{center}
+    \includegraphics[height=10cm,angle=90]{Slide0.pdf}\let\thefootnote\relax
+  \end{center}  
 }
 
 \subsection{Model abundance}
@@ -195,8 +284,6 @@ where \textcolor{red}{$\alpha_{ij}(t)$} and \textcolor{blue}{$r_{i}(t)$} are giv
  \boxed{\textcolor{violet}{y_{j(t)}} = y_{j(t-1)} + \phi_{j}(Y_{j}(t-1) - y_{j}(t-1))}
 \]
 }
-
-% \hspace{-2 in}\let\thefootnote\relax\footnote{{\Tiny Andreazzi, CS., Guimaraes, P. Jr., and Meli\'an, CJ., (2018). Eco-evolutionary feedbacks promote fluctuating selection and long-term stability of antagonistic networks. {\textit{Proc. R. Soc. B}, (In Press).}}}
 
 \subsection{Mean Abun and traits}
 \frame{\frametitle{}
@@ -244,8 +331,7 @@ where \textcolor{red}{$\alpha_{ij}(t)$} and \textcolor{blue}{$r_{i}(t)$} are giv
 \begin{itemize}[<+->]
 \item < 1-| alert@1 > \alert{Eco-evolutionary networks} running on interaction trait distributions show many selection regimes, from fluctuating to directional and stabilizing selection.
 \item < 2-| alert@2 > \alert{Rapid trait} co-evolution when biotic interactions are stronger than environmental stressors drive higher and less variable abundances.
-\item < 3-| alert@3 > Our current understanding of eco-evolutionary networks suggest they can be highly persistent despite strong interactions yet environmental stressors rapidly alter population fluctuations and the persistence of these networks
-\item < 4-| alert@4 > We will have an animated insights talk after this one plus simple practicals to explore evolving trait distributions under different selection modes in simple eco-evolutionary networks.
+\item < 3-| alert@3 > This suggests eco-evolutionary netowrks can be highly persistent despite strong interactions yet environmental stressors might rapidly alter population fluctuations and the persistence of these networks.
 \end{itemize}
 }
     

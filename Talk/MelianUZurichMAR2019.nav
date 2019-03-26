@@ -1,74 +1,195 @@
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@sectionpages {1}{1}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {1}{1}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\sectionentry {1}{Motivation}{2}{Motivation}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {2}{1}}
-\headcommand {\beamer@subsectionentry {0}{1}{1}{2}{Eco-evolutionary networks}}
-\headcommand {\slideentry {1}{1}{1}{2/2}{Eco-evolutionary networks}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{1}{1}{2}{Latitudinal biodiversity gradient}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {1}{1}{1}{2/2}{Latitudinal biodiversity gradient}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {2}{2}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {2}{2}}
-\headcommand {\beamer@subsectionentry {0}{1}{2}{3}{Structural stability}}
-\headcommand {\slideentry {1}{2}{1}{3/3}{Structural stability}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{1}{2}{3}{Heterogeneous biodiversity loss}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {1}{2}{1}{3/3}{Heterogeneous biodiversity loss}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {3}{3}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {3}{3}}
-\headcommand {\beamer@subsectionentry {0}{1}{3}{4}{Eco-evolutionary tangling}}
-\headcommand {\slideentry {1}{3}{1}{4/4}{Eco-evolutionary tangling}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{1}{3}{4}{Architecture of ecosystems}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {1}{3}{1}{4/4}{Architecture of ecosystems}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\beamer@sectionpages {2}{4}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {4}{4}}
-\headcommand {\sectionentry {2}{Questions}{5}{Questions}{0}}
-\headcommand {\beamer@subsectionpages {5}{4}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{5}{Questions}}
-\headcommand {\slideentry {2}{1}{1}{5/7}{Questions}{0}}
-\headcommand {\beamer@framepages {5}{7}}
-\headcommand {\beamer@sectionpages {5}{7}}
-\headcommand {\beamer@subsectionpages {5}{7}}
-\headcommand {\sectionentry {3}{Examples}{8}{Examples}{0}}
-\headcommand {\beamer@subsectionpages {8}{7}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{8}{Model system I}}
-\headcommand {\slideentry {3}{1}{1}{8/8}{Model system I}{0}}
-\headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@subsectionpages {8}{8}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{9}{Model system II}}
-\headcommand {\slideentry {3}{2}{1}{9/9}{Model system II}{0}}
-\headcommand {\beamer@framepages {9}{9}}
-\headcommand {\beamer@sectionpages {8}{9}}
-\headcommand {\beamer@subsectionpages {9}{9}}
-\headcommand {\sectionentry {4}{Eco-evolutionary networks}{10}{Eco-evolutionary networks}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{1}{4}{5}{Eco-evolutionary networks}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {1}{4}{1}{5/5}{Eco-evolutionary networks}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {5}{5}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {5}{5}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{1}{5}{6}{Structural stability}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {1}{5}{1}{6/6}{Structural stability}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {6}{6}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {2}{6}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {6}{6}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {2}{Questions}{7}{Questions}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {7}{6}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{2}{1}{7}{Questions}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {2}{1}{1}{7/9}{Questions}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {7}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {7}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {7}{9}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {3}{Model systems}{10}{Model systems}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {10}{9}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{10}{Demographic and trait dynamics}}
-\headcommand {\slideentry {4}{1}{1}{10/10}{Demographic and trait dynamics}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{3}{1}{10}{Eco-evolutionary tangling I}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {3}{1}{1}{10/10}{Eco-evolutionary tangling I}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {4}{1}{2}{11/11}{Demographic and trait dynamics}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {10}{10}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{3}{2}{11}{Eco-evolutionary tangling II}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {3}{2}{1}{11/11}{Eco-evolutionary tangling II}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\beamer@subsectionpages {10}{11}}
-\headcommand {\beamer@subsectionentry {0}{4}{2}{12}{Model abundance}}
-\headcommand {\slideentry {4}{2}{1}{12/12}{Model abundance}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {11}{11}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{3}{3}{12}{Model system I}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {3}{3}{1}{12/12}{Model system I}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {12}{12}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {12}{12}}
-\headcommand {\beamer@subsectionentry {0}{4}{3}{13}{Mean Abun and traits}}
-\headcommand {\slideentry {4}{3}{1}{13/13}{Mean Abun and traits}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{3}{4}{13}{Model system II}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {3}{4}{1}{13/13}{Model system II}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {13}{13}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {13}{13}}
-\headcommand {\beamer@subsectionentry {0}{4}{4}{14}{Fluctuating selection}}
-\headcommand {\slideentry {4}{4}{1}{14/14}{Fluctuating selection}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{3}{5}{14}{Model system II}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {3}{5}{1}{14/14}{Model system II}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {14}{14}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {10}{14}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {14}{14}}
-\headcommand {\beamer@subsectionentry {0}{4}{5}{15}{Fluctuating selection}}
-\headcommand {\slideentry {4}{5}{1}{15/15}{Fluctuating selection}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {4}{Eco-evolutionary networks}{15}{Eco-evolutionary networks}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {15}{14}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{4}{1}{15}{Modeling strategies}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{1}{1}{15/15}{Modeling strategies}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\beamer@sectionpages {10}{15}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {15}{15}}
-\headcommand {\sectionentry {5}{Outlook}{16}{Outlook}{0}}
-\headcommand {\beamer@subsectionpages {16}{15}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{16}{Outlook}}
-\headcommand {\slideentry {5}{1}{1}{16/19}{Outlook}{0}}
-\headcommand {\beamer@framepages {16}{19}}
-\headcommand {\beamer@subsectionpages {16}{19}}
-\headcommand {\beamer@subsectionentry {0}{5}{2}{20}{thankyou}}
-\headcommand {\slideentry {5}{2}{1}{20/20}{thankyou}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{4}{2}{16}{Demographic and trait dynamics}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{2}{1}{16/16}{Demographic and trait dynamics}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {16}{16}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {16}{16}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{4}{3}{17}{Demographic and trait dynamics}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{3}{1}{17/17}{Demographic and trait dynamics}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {17}{17}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {17}{17}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{4}{4}{18}{Model abundance}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{4}{1}{18/18}{Model abundance}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {18}{18}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {18}{18}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{4}{5}{19}{Mean Abun and traits}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{5}{1}{19/19}{Mean Abun and traits}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {19}{19}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {19}{19}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{4}{6}{20}{Fluctuating selection}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{6}{1}{20/20}{Fluctuating selection}{0}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\beamer@partpages {1}{20}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {20}{20}}
-\headcommand {\beamer@sectionpages {16}{20}}
-\headcommand {\beamer@documentpages {20}}
-\headcommand {\gdef \inserttotalframenumber {14}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{4}{7}{21}{Fluctuating selection}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{7}{1}{21/21}{Fluctuating selection}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {21}{21}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@sectionpages {15}{21}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {21}{21}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {5}{Outlook}{22}{Outlook}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {22}{21}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{5}{1}{22}{Outlook}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {5}{1}{1}{22/24}{Outlook}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {22}{24}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {22}{24}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{5}{2}{25}{thankyou}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {5}{2}{1}{25/25}{thankyou}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\beamer@partpages {1}{25}}
+\headcommand {\beamer@subsectionpages {25}{25}}
+\headcommand {\beamer@sectionpages {22}{25}}
+\headcommand {\beamer@documentpages {25}}
+\headcommand {\gdef \inserttotalframenumber {20}}
