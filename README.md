@@ -1,4 +1,6 @@
-# Ecoevon contains three parts
+# Ecoevon -- Eco-evolutionary networks 
+
+#This repo contains three parts
 
 A main talk in the folder TALK containing the lecture Eco-evolutionary networks with all the slides and the beamer latex files
 
