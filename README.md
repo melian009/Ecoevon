@@ -10,15 +10,21 @@ and the ANIMATEDTALK folder containing a Jupyter python kernel talk to train our
 
 
 To open the notebook for the folder QUESTIONDRIVENEXERCISES
+
 #Open notebook -- requires Octave kernel
+
 jupyter notebook ecoevonets.ipynb
 
 To open the ANIMATEDTALK in presentation mode
+
 #open slides
+
 jupyter nbconvert Eco-evolutionary\ networks.ipynb --to slides
 
 and to open the notebook
+
 #open notebook
+
 jupyter notebook Eco-evolutionary\ networks.ipynb
 
 
