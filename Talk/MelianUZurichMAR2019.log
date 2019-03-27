@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.14)  26 MAR 2019 12:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.14)  27 MAR 2019 22:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1890,13 +1890,13 @@ Package biblatex Info: Reference segment=0 on input line 80.
 map}
 
  <./evo1v2.pdf>]
-<Figure1Mannion.pdf, id=224, 72.27pt x 37.5804pt>
+<Figure1Mannion.pdf, id=245, 72.27pt x 37.5804pt>
 File: Figure1Mannion.pdf Graphic file (type pdf)
 <use Figure1Mannion.pdf>
 Package pdftex.def Info: Figure1Mannion.pdf  used on input line 101.
 (pdftex.def)             Requested size: 313.06512pt x 199.18024pt.
  [2 <./Figure1Mannion.pdf>]
-<BiodiversityLoss.pdf, id=278, 796.6487pt x 448.10245pt>
+<BiodiversityLoss.pdf, id=302, 796.6487pt x 448.10245pt>
 File: BiodiversityLoss.pdf Graphic file (type pdf)
 <use BiodiversityLoss.pdf>
 Package pdftex.def Info: BiodiversityLoss.pdf  used on input line 109.
@@ -1905,7 +1905,7 @@ Package pdftex.def Info: BiodiversityLoss.pdf  used on input line 109.
 [3
 
  <./BiodiversityLoss.pdf>]
-<aecos.pdf, id=343, 796.6487pt x 448.10245pt>
+<aecos.pdf, id=370, 796.6487pt x 448.10245pt>
 File: aecos.pdf Graphic file (type pdf)
 <use aecos.pdf>
 Package pdftex.def Info: aecos.pdf  used on input line 120.
@@ -1913,175 +1913,204 @@ Package pdftex.def Info: aecos.pdf  used on input line 120.
  [4
 
  <./aecos.pdf>]
-<Slide0.pdf, id=403, 804.60603pt x 1034.26402pt>
-File: Slide0.pdf Graphic file (type pdf)
-<use Slide0.pdf>
-Package pdftex.def Info: Slide0.pdf  used on input line 132.
-(pdftex.def)             Requested size: 199.1621pt x 284.52606pt.
+<asymmetry.png, id=433, 804.606pt x 1034.264pt>
+File: asymmetry.png Graphic file (type png)
+<use asymmetry.png>
+Package pdftex.def Info: asymmetry.png  used on input line 132.
+(pdftex.def)             Requested size: 199.16208pt x 284.52606pt.
  [5
 
+ <./asymmetry.png>]
+<Slide0.pdf, id=489, 804.60603pt x 1034.26402pt>
+File: Slide0.pdf Graphic file (type pdf)
+<use Slide0.pdf>
+Package pdftex.def Info: Slide0.pdf  used on input line 144.
+(pdftex.def)             Requested size: 199.1621pt x 284.52606pt.
+ [6
+
  <./Slide0.pdf>]
-<sspmn.pdf, id=460, 873.4281pt x 746.63158pt>
+File: asymmetry.png Graphic file (type png)
+<use asymmetry.png>
+Package pdftex.def Info: asymmetry.png  used on input line 159.
+(pdftex.def)             Requested size: 199.16208pt x 284.52606pt.
+<Slide2.pdf, id=549, 804.60603pt x 1037.59727pt>
+File: Slide2.pdf Graphic file (type pdf)
+<use Slide2.pdf>
+Package pdftex.def Info: Slide2.pdf  used on input line 159.
+(pdftex.def)             Requested size: 199.1621pt x 284.52477pt.
+ [7
+
+ <./Slide2.pdf>]
+<sspmn.pdf, id=617, 873.4281pt x 746.63158pt>
 File: sspmn.pdf Graphic file (type pdf)
 <use sspmn.pdf>
-Package pdftex.def Info: sspmn.pdf  used on input line 140.
+Package pdftex.def Info: sspmn.pdf  used on input line 168.
 (pdftex.def)             Requested size: 341.43306pt x 291.8687pt.
 
-Overfull \vbox (96.01718pt too high) detected at line 140
+Overfull \vbox (96.01718pt too high) detected at line 168
  []
 
-[6
+[8
 
- <./sspmn.pdf>] [7
+ <./sspmn.pdf>] [9
 
-] [8
+] [10
 
-] [9
+] [11
 
 ]
-<biogeographyradiations.png, id=1135, 433.62pt x 281.1303pt>
+<biogeographyradiations.png, id=1303, 433.62pt x 281.1303pt>
 File: biogeographyradiations.png Graphic file (type png)
 <use biogeographyradiations.png>
-Package pdftex.def Info: biogeographyradiations.png  used on input line 162.
+Package pdftex.def Info: biogeographyradiations.png  used on input line 190.
 (pdftex.def)             Requested size: 256.0748pt x 166.02844pt.
- [10
+ [12
 
  <./biogeographyradiations.png>]
-<LVictoria.jpg, id=1185, 542.025pt x 568.1225pt>
+<LVictoria.jpg, id=1357, 542.025pt x 568.1225pt>
 File: LVictoria.jpg Graphic file (type jpg)
 <use LVictoria.jpg>
-Package pdftex.def Info: LVictoria.jpg  used on input line 178.
+Package pdftex.def Info: LVictoria.jpg  used on input line 206.
 (pdftex.def)             Requested size: 142.26378pt x 149.1127pt.
-<cichlids.png, id=1186, 725.22945pt x 664.884pt>
+<cichlids.png, id=1358, 725.22945pt x 664.884pt>
 File: cichlids.png Graphic file (type png)
 <use cichlids.png>
-Package pdftex.def Info: cichlids.png  used on input line 178.
+Package pdftex.def Info: cichlids.png  used on input line 206.
 (pdftex.def)             Requested size: 170.71652pt x 156.51154pt.
- [11
+ [13
 
  <./LVictoria.jpg> <./cichlids.png>]
-<Sticklebacks.pdf, id=1239, 257.00258pt x 170.6205pt>
+<Sticklebacks.pdf, id=1413, 257.00258pt x 170.6205pt>
 File: Sticklebacks.pdf Graphic file (type pdf)
 <use Sticklebacks.pdf>
-Package pdftex.def Info: Sticklebacks.pdf  used on input line 191.
+Package pdftex.def Info: Sticklebacks.pdf  used on input line 219.
 (pdftex.def)             Requested size: 312.98189pt x 170.72679pt.
 
-Overfull \hbox (5.69202pt too wide) in paragraph at lines 191--191
+Overfull \hbox (5.69202pt too wide) in paragraph at lines 219--219
 [][] 
  []
 
-[12
+[14
 
  <./Sticklebacks.pdf>]
-<BeakIslands.png, id=1293, 492.84125pt x 314.17375pt>
+<BeakIslands.png, id=1471, 492.84125pt x 314.17375pt>
 File: BeakIslands.png Graphic file (type png)
 <use BeakIslands.png>
-Package pdftex.def Info: BeakIslands.png  used on input line 216.
+Package pdftex.def Info: BeakIslands.png  used on input line 244.
 (pdftex.def)             Requested size: 142.26604pt x 113.80716pt.
-<Darwinbeak.png, id=1294, 401.5pt x 551.05875pt>
+<Darwinbeak.png, id=1472, 401.5pt x 551.05875pt>
 File: Darwinbeak.png Graphic file (type png)
 <use Darwinbeak.png>
-Package pdftex.def Info: Darwinbeak.png  used on input line 216.
+Package pdftex.def Info: Darwinbeak.png  used on input line 244.
 (pdftex.def)             Requested size: 142.26698pt x 170.71713pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 216.
+(Font)              <9> on input line 244.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 216.
+(Font)              <5> on input line 244.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 216.
- [13
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 244.
+ [15
 
  <./BeakIslands.png> <./Darwinbeak.png>]
-<darwinv1.pdf, id=1346, 500.58876pt x 309.22034pt>
+<darwinv1.pdf, id=1525, 500.58876pt x 309.22034pt>
 File: darwinv1.pdf Graphic file (type pdf)
 <use darwinv1.pdf>
-Package pdftex.def Info: darwinv1.pdf  used on input line 227.
+Package pdftex.def Info: darwinv1.pdf  used on input line 255.
 (pdftex.def)             Requested size: 312.98941pt x 170.7134pt.
- [14
-
- <./darwinv1.pdf>]
-<TradeOffs.pdf, id=1400, 597.23125pt x 845.15756pt>
-File: TradeOffs.pdf Graphic file (type pdf)
-<use TradeOffs.pdf>
-Package pdftex.def Info: TradeOffs.pdf  used on input line 242.
-(pdftex.def)             Requested size: 341.43306pt x 483.17628pt.
-
-Overfull \vbox (244.88756pt too high) detected at line 242
- []
-
-[15
-
- <./TradeOffs.pdf>]
-<asymmetry.png, id=1478, 804.606pt x 1034.264pt>
-File: asymmetry.png Graphic file (type png)
-<use asymmetry.png>
-Package pdftex.def Info: asymmetry.png  used on input line 251.
-(pdftex.def)             Requested size: 221.34714pt x 284.52756pt.
  [16
 
- <./asymmetry.png>]
+ <./darwinv1.pdf>]
+<TradeOffs.pdf, id=1583, 597.23125pt x 845.15756pt>
+File: TradeOffs.pdf Graphic file (type pdf)
+<use TradeOffs.pdf>
+Package pdftex.def Info: TradeOffs.pdf  used on input line 270.
+(pdftex.def)             Requested size: 341.43306pt x 483.17628pt.
+
+Overfull \vbox (244.88756pt too high) detected at line 270
+ []
+
+[17
+
+ <./TradeOffs.pdf>]
 File: Slide0.pdf Graphic file (type pdf)
 <use Slide0.pdf>
-Package pdftex.def Info: Slide0.pdf  used on input line 265.
-(pdftex.def)             Requested size: 221.34714pt x 284.52756pt.
- [17
+Package pdftex.def Info: Slide0.pdf  used on input line 282.
+(pdftex.def)             Requested size: 199.1621pt x 284.52606pt.
+ [18
 
 ]
-Overfull \hbox (8.83539pt too wide) detected at line 286
-[]
- []
-
-[18
+File: asymmetry.png Graphic file (type png)
+<use asymmetry.png>
+Package pdftex.def Info: asymmetry.png  used on input line 298.
+(pdftex.def)             Requested size: 199.16208pt x 284.52606pt.
+File: Slide2.pdf Graphic file (type pdf)
+<use Slide2.pdf>
+Package pdftex.def Info: Slide2.pdf  used on input line 298.
+(pdftex.def)             Requested size: 199.1621pt x 284.52477pt.
+ [19
 
 ]
-<figure2.pdf, id=1637, 489.60841pt x 342.32578pt>
-File: figure2.pdf Graphic file (type pdf)
-<use figure2.pdf>
-Package pdftex.def Info: figure2.pdf  used on input line 296.
-(pdftex.def)             Requested size: 341.43857pt x 284.53775pt.
-
-Overfull \hbox (16.0812pt too wide) in paragraph at lines 296--296
-[] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 296--296
-
- []
-
-
-Overfull \vbox (85.14397pt too high) detected at line 296
- []
-
-[19
-
- <./figure2.pdf>]
-Overfull \hbox (20.32703pt too wide) detected at line 317
+Overfull \hbox (8.83539pt too wide) detected at line 319
 []
  []
 
 [20
 
 ]
-<figure1.pdf, id=1764, 416.55624pt x 416.55624pt>
-File: figure1.pdf Graphic file (type pdf)
-<use figure1.pdf>
-Package pdftex.def Info: figure1.pdf  used on input line 326.
-(pdftex.def)             Requested size: 199.16927pt x 199.16927pt.
+<figure2.pdf, id=1831, 489.60841pt x 342.32578pt>
+File: figure2.pdf Graphic file (type pdf)
+<use figure2.pdf>
+Package pdftex.def Info: figure2.pdf  used on input line 329.
+(pdftex.def)             Requested size: 341.43857pt x 284.53775pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--326
+Overfull \hbox (16.0812pt too wide) in paragraph at lines 329--329
+[] [] 
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--329
+
+ []
+
+
+Overfull \vbox (85.14397pt too high) detected at line 329
  []
 
 [21
 
- <./figure1.pdf>] [22
+ <./figure2.pdf>]
+Overfull \hbox (20.32703pt too wide) detected at line 346
+[]
+ []
 
-] [23
+[22
 
-] [24
+]
+./MelianUZurichMAR2019.tex:346: Too many }'s.
+l.346 }}
+        
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+<figure1.pdf, id=1962, 416.55624pt x 416.55624pt>
+File: figure1.pdf Graphic file (type pdf)
+<use figure1.pdf>
+Package pdftex.def Info: figure1.pdf  used on input line 355.
+(pdftex.def)             Requested size: 199.16927pt x 199.16927pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--355
+
+ []
+
+[23
+
+ <./figure1.pdf>] [24
 
 ] [25
+
+] [26
+
+] [27
 
 ]
 \tf@nav=\write9
@@ -2093,43 +2122,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 326--326
 \tf@snm=\write11
 \openout11 = `MelianUZurichMAR2019.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 348.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 348.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 377.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 377.
  (./MelianUZurichMAR2019.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 348.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 348.
-Package rerunfilecheck Info: File `MelianUZurichMAR2019.out' has not changed.
-(rerunfilecheck)             Checksum: 5238E65D0106E9F7E2535CD98723BD46;1663.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 377.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 377.
+
+
+Package rerunfilecheck Warning: File `MelianUZurichMAR2019.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `MelianUZurichMAR2019.out':
+(rerunfilecheck)             Before: 33292F9282510E737A16C617AC492603;1884
+(rerunfilecheck)             After:  23918BEACE73E1E4667C9212A0892EA9;1803.
 Package logreq Info: Writing requests to 'MelianUZurichMAR2019.run.xml'.
 \openout1 = `MelianUZurichMAR2019.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33141 strings out of 492982
- 635827 string characters out of 6134895
- 1156499 words of memory out of 5000000
- 35899 multiletter control sequences out of 15000+600000
+ 33171 strings out of 492982
+ 636200 string characters out of 6134895
+ 1157499 words of memory out of 5000000
+ 35918 multiletter control sequences out of 15000+600000
  48099 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,20n,67p,3252b,1170s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texlive/texmf-dist/font
-s/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmmi5.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public
-/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on MelianUZurichMAR2019.pdf (25 pages, 12502122 bytes).
+pdfTeX warning (dest): name{Navigation28} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.5.2.28} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.5.1.25} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.4.8.24} has been referenced but does not e
+xist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
+dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
+re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texlive/texmf-dist/fonts/
+enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mmi5.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf/fonts/type1/public/t
+ex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on MelianUZurichMAR2019.pdf (27 pages, 12903786 bytes).
 PDF statistics:
- 2087 PDF objects out of 2487 (max. 8388607)
- 1755 compressed objects within 18 object streams
- 76 named destinations out of 1000 (max. 500000)
- 374 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2305 PDF objects out of 2487 (max. 8388607)
+ 1960 compressed objects within 20 object streams
+ 86 named destinations out of 1000 (max. 500000)
+ 403 words of extra memory for PDF output out of 10000 (max. 10000000)
 
