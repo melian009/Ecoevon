@@ -1,4 +1,6 @@
-# Ecoevon contains three parts
+# Ecoevon -- Eco-evolutionary networks 
+
+#This repo contains three parts
 
 A main talk in the folder TALK containing the lecture Eco-evolutionary networks with all the slides and the beamer latex files
 
@@ -8,15 +10,21 @@ and the ANIMATEDTALK folder containing a Jupyter python kernel talk to train our
 
 
 To open the notebook for the folder QUESTIONDRIVENEXERCISES
+
 #Open notebook -- requires Octave kernel
+
 jupyter notebook ecoevonets.ipynb
 
 To open the ANIMATEDTALK in presentation mode
+
 #open slides
+
 jupyter nbconvert Eco-evolutionary\ networks.ipynb --to slides
 
 and to open the notebook
+
 #open notebook
+
 jupyter notebook Eco-evolutionary\ networks.ipynb
 
 
