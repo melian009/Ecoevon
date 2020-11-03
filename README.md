@@ -1,4 +1,4 @@
-# Ecoevon -- Eco-evolutionary networks 
+# Ecoevon -- Eco-evolutionary networks TEACHING Ecological Networks MAY 2019 U Zurich
 
 #This repo contains three parts
 

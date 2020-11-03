@@ -1,0 +1,360 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% beamer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% beamer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% To run - pdflatex filename.tex
+%	   acroread filename.pdf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[handout,compress,green]{beamer}
+\RequirePackage{flashmovie}
+\documentclass[compress,pink]{beamer} 
+%\mode<presentation>
+%\usetheme{Madrid}
+
+%\hypersetup{pdfpagemode=FullScreen}%makes your presentation go automatically to full screen
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+
+
+% define your own colors:
+%\definecolor{White}{rgb}{12,250,170}
+%\xdefinecolor{white}{cmyk}{0.64,0,0.95,0.4}
+\useoutertheme[subsection=false]{smoothbars}
+\beamertemplateshadingbackground{white!25}{pink!10}
+\setbeamertemplate{footline}[text line]{} % makes the footer EMPTY
+
+% include packages
+\usepackage{subfigure}
+%\usepackage{natbib}
+%\usepackage{biblatex}
+\usepackage{multicol}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath}
+\usepackage[all,knot]{xy}
+\xyoption{arc}
+\usepackage{url}
+\usepackage{multimedia}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{fontenc}
+\usepackage{lmodern}
+\usepackage[swedish]{babel}
+\usefonttheme{professionalfonts}
+\usepackage{times}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{multirow}
+\usepackage{blindtext}
+
+\usetikzlibrary{arrows,shapes} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title Page Info %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{-8 in}
+\title{}\\
+
+\vspace{0.4 in}
+\tiny Carlos J. Meli\'an\\ETH-EAWAG, Switzerland\\
+https://github.com/melian009
+\vspace{4.5 in}
+\pgfdeclareimage[width=11cm]{mybackground}{evo1v2.pdf}
+\setbeamertemplate{title page}{
+
+        \begin{picture}(2,2)
+\vspace{1.5 in}
+
+            \put(130,-60){%
+                \pgfuseimage{mybackground}
+            }
+
+            \put(0,-110.7){%
+                \begin{minipage}[b][45mm][t]{26mm}
+                    \usebeamerfont{title}{\inserttitle\par}
+                \end{minipage}
+            }
+
+            \end{picture}
+
+    }
+
+\vspace{-1.5 in}
+\date{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Begin Your Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\vspace{-2 in}
+\hspace{-0.04 in}{\Large \textcolor{black}{Eco-}\textcolor{red}{Evo} \\ of \textcolor{blue}{Networks}}
+	\titlepage
+
+\vspace{-0.25 in} {\tiny \textcolor{blue}{Carlos J. Melian, U. Zurich, 28 March 2019}}
+\newpage
+
+\section{Motivation}
+
+\subsection{Interdependent networks}
+\frame{\frametitle{\small{Why?}}
+\setbeamercolor{uppercol}{fg=black,bg=white}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+\includegraphics[height=7cm,width=10cm]{in.pdf}
+\end{beamerboxesrounded}
+}
+
+\subsection{How}
+\frame{\frametitle{\small{How?}}
+\setbeamercolor{uppercol}{fg=black,bg=white}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+\includegraphics[height=7cm,width=10cm]{flowchart.pdf}
+\end{beamerboxesrounded}
+}
+
+%Complexity of gene interactions and the stability of phenotypes vs. ecological interactions and stability of food webs
+\subsection{Structural stability}
+\frame{\frametitle{\small{When?}}
+\vspace{0.25 in}
+\hspace{-1.5 in}\includegraphics[width=14cm]{sspmn.pdf}
+}
+
+\section{Questions}
+\subsection{Questions}
+\frame{\frametitle{}
+  \begin{itemize}
+  \item < 1-| alert@1 > {\Large How does trait evolution affect ecological networks?}
+  \item < 2-| alert@2 > {\Large Does trait evolution produce highly stable and complex food webs?} 
+\end{itemize}
+}
+
+\section{Data}
+
+%Number of links, species and s.d interaction strength: positive, negative or non correlated
+\subsection{Stability-complexity}
+\frame{\frametitle{\small{Stability-complexity in empirical food webs}}
+\setbeamercolor{uppercol}{fg=black,bg=white}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+  \includegraphics<1>[width=6.5cm]{ncomms12573-f4.jpg}
+\footnotetext{{\Tiny Claire et al. (2016). No complexity-stability relationship in empirical ecosystems. Nature Communications, 7:12573}}
+\end{beamerboxesrounded}
+}
+
+\subsection{Model system I}
+\frame{\frametitle{\tiny{Genes to traits (Sticklebacks)}}
+\setbeamercolor{uppercol}{fg=black,bg=white}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+\begin{columns}
+  \begin{column}{4cm}
+    \vspace{-2 in}
+\hspace{-3 in}\includegraphics[height=7.5cm,width=14cm]{Sticklebacks.pdf}
+\end{column}
+\end{columns}
+\end{beamerboxesrounded}
+}
+%Enrich biology
+%http://blog.targethealth.com/2007/12/17/
+
+%effects from
+%https://tex.stackexchange.com/questions/204522/letter-by-letter-uncovering-animation-effect
+
+\subsection{Model system II}
+\frame{\frametitle{\tiny{Trait variance to interaction strength (Darwin's finches)}}
+%\setbeamercolor{uppercol}{fg=black,bg=white}
+%\setbeamercolor{lowercol}{fg=black,bg=white}
+%\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+%\begin{columns}
+%  \begin{column}{6cm}
+\vspace{-2.5 in}
+\hspace{0.5 in}\includegraphics[height=12cm,width=19cm]{darwinv1.pdf}
+%\end{column}
+%\end{columns}
+%\end{beamerboxesrounded}
+}
+
+\section{Gap}
+
+%We do not have a good understanding of how to integrate data and theory to connect gene to traits, traits to food webs and food wens to meta-ecosystems...
+\subsection{Hierarchical networks}
+\frame{\frametitle{\small{Connecting gene to traits, traits to food webs and food webs to meta-ecosystems}}
+   \vspace{-0.6 in}
+   \hspace{-0.5 in}\includegraphics[height=8cm,width=10cm]{evo1v2.pdf}
+   \\
+    \hspace{0.1 in}\let\thefootnote\relax{{\Tiny Meli\'an C. J., et al. (2018). The stability and complexity of eco-evolutionary networks in meta-ecosystems. \textit{TREE}, (Resubmitted).}}
+}
+
+\section{Theory}
+
+\subsection{Trait distributions}
+\frame{\frametitle{}
+\begin{center}
+  \includegraphics[height=12cm,width=9cm]{TDv1.pdf}
+\end{center}
+}
+
+\subsection{Prey selection and interaction strength}
+\frame{\frametitle{}
+\setbeamercolor{uppercol}{fg=black,bg=white}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+  {\scriptsize ... and the interaction rate between prey $x$ with trait value $z_{x}^{t}$ and predator $y$ with trait value $z_{y}^{t}$ in patch $i$ is 
+\begin{equation}
+\hspace{-0.25 in}\gamma^{t}_{ixy} =  \frac{1}{N} \left( exp \left[ -\left(z^{t}_{y} - z^{t}_{x}\right)^2 \right] + 2\alpha \left[sgn(z^{t}_{y} - z^{t}_{x}) \left(1 - exp \left(-z^{t}_{y} - z^{t}_{x}\right)^2 \right) \\ + sgn(\alpha) \right] \right)
+\end{equation}
+where $N$ is a normalization constant, $sgn(X)$ is the sign function
+and $\alpha$ is the prey preference asymmetry... and the interaction
+strength between prey $x$ for a specific intraspecific niche width
+($ianw$) of the predator $y$ in patch $i$ at time $t$ can then be
+approximated as
+\begin{equation}
+  a^{t}_{ixy} = \int_{ianw} \gamma^{t}_{ixy} D(x)^{t} D(y)^{t} \mathrm{d}x \mathrm{d}y,
+\end{equation}
+where $D(x)$ and $D(y)$ are the density of the prey and predator in patch $i$,
+respectively.}
+\end{beamerboxesrounded}
+}
+
+\subsection{Trait variance and interaction strength}
+\frame{\frametitle{}
+\setbeamercolor{uppercol}{fg=black,bg=white}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+\begin{center}
+\includegraphics<1>[height=8cm,width=8cm]{TDIS.pdf}
+\end{center}
+\end{beamerboxesrounded}
+}
+
+\section{Outlook}
+\subsection{Outlook}
+\frame{\frametitle{Outlook}
+\begin{itemize}[<+->]
+\item < 1-| alert@1 > {{\Large BIG CHALLENGE}: Infer the bioregions of food webs from demography, trait evolution and trait variance}
+\item < 2-| alert@2 > {\small Predator niche-width and asymmetry in prey preference together with predator-prey trait variation may play a critical role in
+    anticipating food web stability and complexity}
+\end{itemize}
+}
+
+
+\section{Lab highlights}
+% Hot and cold spots: RGG and centripetal OR centrifugal gene flow diversification models
+%1. Landscape
+\subsection{Diversification}
+\frame{\frametitle{1. Diversification and hot spots}
+\begin{center}
+ \vspace{-0.35 in}
+  \hspace{-0.5 in}\includegraphics[height=6cm,width=11cm]{Threshold2.pdf}
+\vspace{0.25 in}
+\end{center}
+}
+%2. Models
+\subsection{Gene flow and hot spots}
+\frame{\frametitle{Gene flow, ($\mathcal{M}$)}
+\setbeamercolor{uppercol}{fg=black,bg=white}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+Symmetric gene flow
+\begin{equation}
+m_{ij}^{k} = \frac{\mathcal{M}}{d_{ij}}
+\end{equation}
+
+Centripetal gene flow
+\begin{equation}
+m_{ij}^{k} = \left\{
+\begin{array}{ll}
+ \frac{\mathcal{M}}{d_{ij}} & \text{if} \;\;\sum_{l=1}^{\mathcal{S}}{d_{il}}\leq \sum_{l=1}^{\mathcal{S}} d_{jl} ,  \\
+ 0 & \text{if} \;\;\sum_{l=1}^{\mathcal{S}} d_{il} > \sum_{l=1}^{\mathcal{S}} d_{jl}
+  \end{array}
+ \right.
+\end{equation}
+
+Centrifugal gene flow
+\begin{equation}
+m_{ij}^{k} = \left\{
+\begin{array}{ll}
+ \frac{\mathcal{M}}{d_{ij}} & \text{if} \;\;\sum_{l=1}^{\mathcal{S}}{d_{il}}\geq \sum_{l=1}^{\mathcal{S}} d_{jl} ,  \\
+ 0 & \text{if} \;\;\sum_{l=1}^{\mathcal{S}} d_{il} < \sum_{l=1}^{\mathcal{S}} d_{jl}
+  \end{array}
+ \right.
+\end{equation}
+\end{beamerboxesrounded}
+}
+%3. Hot and cold spots
+\subsection{Explanation for hot-cold spots}
+\frame{\frametitle{\textcolor{red}{Hot} and \textcolor{blue}{cold} spots ($\mathcal{J}$,$\mathcal{L}$,$\mu$,$\mathcal{Q}_{min}$,$\mathcal{D}_{max}$,$\mathcal{M}$)}
+\setbeamercolor{uppercol}{fg=black,bg=white}
+\setbeamercolor{lowercol}{fg=black,bg=white}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+  \hspace{-0.2 in}\includegraphics[height=5.5cm,width=11cm]{Fig2allnb.pdf} 
+\end{beamerboxesrounded}
+\hspace{-1 in}\let\thefootnote\relax\footnote{{\Tiny Meli\'an, C. J., et al. Diversification and biodiversity dynamics of hot and cold spots (2015). {\textit{Ecography}, 38:393–401.}}}
+}
+
+%Landscape dynamics
+%1. Network animation
+%2. Circadian clock of biodiversity dynamics
+
+\subsection{Landscape dynamics}
+\frame{\frametitle{2. Circadian clock of biodiversity dynamics}
+\setbeamercolor{uppercol}{fg=black,bg=pink}
+\setbeamercolor{lowercol}{fg=black,bg=pink}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+\begin{minipage}[t]{5.1cm}
+\hspace{4cm}\flashmovie[auto=0,loop=1,controlbar=1,engine=flv-player,width=5cm,height=5cm]{Arctic.flv}
+\end{minipage}
+\end{beamerboxesrounded}
+}
+
+\subsection{Circadian clock}
+\frame{\frametitle{2. Circadian clock of biodiversity dynamics}
+\setbeamercolor{uppercol}{fg=black,bg=pink}
+\setbeamercolor{lowercol}{fg=black,bg=pink}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+\includegraphics[width=10cm,height=6cm]{circadian.png}\\
+\end{beamerboxesrounded}
+\let\thefootnote\relax\footnote{{\Tiny Palamara, GM., de Santana, C. N., Klecka, J., Rozenfeld, A., and Meli\'an, C. J., (2018). Metacommunities in dynamic landscapes. {\textit{Submitted}}}}
+}
+
+% Fluctuating selection
+% 1. Network
+% 2. Models
+% 3. abundance and traits
+
+\subsection{Demographic and trait dynamics}
+\frame{\frametitle{3. Eco-evolutionary feedbacks}
+  %\setbeamercolor{uppercol}{fg=black,bg=pink}
+  %\setbeamercolor{lowercol}{fg=black,bg=pink}
+   \vspace{-0.75 in}
+%\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+  
+  \includegraphics[width=8cm,height=10cm,angle=90]{asymmetry.png}\\
+  % \end{beamerboxesrounded}
+   \vspace{-0.5 in}
+ \let\thefootnote\relax\footnote{{\Tiny de Andreazzi, C. S., Guimaraes, P. Jr., and Melian, C. J., (2018). Eco-evolutionary feedbacks promote interaction fluctuating selection and long-term stability of antagonistic networks. {\textit{PRSB}, (In Press).}}}
+}
+\subsection{Demographic and trait dynamics}
+\frame{\frametitle{}
+  \setbeamercolor{uppercol}{fg=black,bg=pink}
+\setbeamercolor{lowercol}{fg=black,bg=pink}
+\begin{beamerboxesrounded}[upper=upperco,lower=lowercol,shadow=true]{}
+  \hspace{-0.25 in}\includegraphics[width=12cm,height=10cm]{figure2.pdf}\\
+\end{beamerboxesrounded}
+}
+
+\subsection{thankyou}
+\frame{\frametitle{Merci!}
+\begin{itemize}
+\item Computing-scientist staff at NCEAS, University of California Santa Barbara.
+\item Swiss National Science Foundation 
+\item Cecilia S. de Andreazzi, Jordi Bascompte, Miguel A. Fortuna, Paulo Guimaraes, Jan Klecka, Ayana Martins, Gian Marco Palamara, Alex Rozenfeld, Charles N. de Santana, and Ole Seehausen
+\end{itemize}
+}
+
+
+
+\end{document}
