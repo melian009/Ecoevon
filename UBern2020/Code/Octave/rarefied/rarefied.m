@@ -113,9 +113,9 @@ Type = unique(ForestType);
 UNI = length(Type)
     
 red=unifrnd(0,1); green=unifrnd(0,1); blue=unifrnd(0,1);
-clf;
-labels = {};
-colororder = get (gca, "colororder");  
+%clf;
+%labels = {};
+%colororder = get (gca, "colororder");  
   
 R=10;
 for rep = 1:R; 
@@ -127,11 +127,11 @@ for rep = 1:R;
           U(r,2) = length(L);  
       end
       hold on
-      h = plot(U(:,1),U(:,2),'k','color',[red green blue],'Markersize',36)
+      h = plot(U(:,1),U(:,2),'k','color',[red green blue],'Markersize',36);
 end%rep 
- hold on;
- set (h, "color", colororder(n,:));
- labels = {labels{:}, ["Signal ", num2str(n)]};
+ %hold on;
+ %set (h, "color", colororder(n,:));
+ %labels = {labels{:}, ["Signal ", num2str(n)]};
 
 %pause   
 
