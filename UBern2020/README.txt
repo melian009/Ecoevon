@@ -3,8 +3,8 @@ jupyter notebook rarefaction.ipynb &
 
 
 ## Open jupyter presentation in slide mode
-jupyter nbconvert --to slides bjw-checkpoint.ipynb
-jupyter nbconvert bjw-checkpoint.ipynb --to slides --post serve
+jupyter nbconvert --to slides rarefaction.ipynb
+jupyter nbconvert rarefaction.ipynb --to slides --post serve
 
 
 #### WARNING ################################################
