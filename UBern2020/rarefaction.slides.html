@@ -13249,7 +13249,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-compare-samples-of-different-size?">How to compare samples of different size?<a class="anchor-link" href="#How-to-compare-samples-of-different-size?">&#182;</a></h2>
+<h1 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h1><h2 id="How-to-compare-samples-of-different-size?">How to compare samples of different size?<a class="anchor-link" href="#How-to-compare-samples-of-different-size?">&#182;</a></h2><h2 id="How-would-you-account-for-time,-space,-and-heterogeneity-in-the-sampling-design-(or-in-the-analysis)?">How would you account for time, space, and heterogeneity in the sampling design (or in the analysis)?<a class="anchor-link" href="#How-would-you-account-for-time,-space,-and-heterogeneity-in-the-sampling-design-(or-in-the-analysis)?">&#182;</a></h2>
 </div>
 </div>
 </div></section></section><section><section>
@@ -13289,23 +13289,23 @@ a.anchor-link {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">pkg</span> <span class="n">load</span> <span class="n">statistics</span>
-<span class="n">pkg</span> <span class="n">load</span> <span class="n">dataframe</span>
-<span class="n">pkg</span> <span class="n">load</span> <span class="n">symbolic</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="nb">statistics</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">dataframe</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 
-<span class="o">%</span><span class="n">DATA</span> <span class="o">---------------------</span>
-<span class="n">fid</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Code</span><span class="o">/</span><span class="n">Octave</span><span class="o">/</span><span class="n">plantpollinator</span><span class="o">/</span><span class="kt">Matrix</span> <span class="n">complete_2020</span><span class="o">.</span><span class="n">csv</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="kp">in</span> <span class="o">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="err">&#39;</span><span class="o">%</span><span class="n">c</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
-<span class="n">linesR</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="kp">in</span><span class="p">,</span><span class="err">&#39;</span><span class="p">(</span><span class="o">^</span><span class="p">,</span><span class="o">|</span><span class="p">)([</span><span class="o">^\</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">match</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">All</span> <span class="o">=</span> <span class="n">char</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
-<span class="n">Forest</span> <span class="o">=</span> <span class="n">cell</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">All</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">wR</span> <span class="o">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
+<span class="c">%DATA ---------------------</span>
+<span class="n">fid</span> <span class="p">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;Code/Octave/plantpollinator/Matrix complete_2020.csv&#39;</span><span class="p">);</span>
+<span class="n">in</span> <span class="p">=</span> <span class="nb">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="s">&#39;%c&#39;</span><span class="p">);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
+<span class="n">linesR</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">in</span><span class="p">,</span><span class="s">&#39;(^,|)([^\n]+)&#39;</span><span class="p">,</span> <span class="s">&#39;match&#39;</span><span class="p">);</span>
+<span class="n">All</span> <span class="p">=</span> <span class="nb">char</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
+<span class="n">Forest</span> <span class="p">=</span> <span class="nb">cell</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">All</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">wR</span> <span class="p">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
 
 
-<span class="o">%</span><span class="mf">1.</span> <span class="n">Print</span> <span class="n">raw</span> <span class="n">data</span> <span class="o">----------------------------</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">char</span><span class="p">(</span><span class="n">wR</span><span class="p">)</span>
-<span class="o">%----------------------------</span>
+<span class="c">%1. Print raw data ----------------------------</span>
+<span class="n">R</span> <span class="p">=</span> <span class="nb">char</span><span class="p">(</span><span class="n">wR</span><span class="p">)</span>
+<span class="c">%----------------------------</span>
 </pre></div>
 
     </div>
@@ -19135,33 +19135,33 @@ Amarante,11/01/08,Wigginsia tephracantha,2,Augochlora semiramis,2,1,,,,,
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">pkg</span> <span class="n">load</span> <span class="n">statistics</span>
-<span class="n">pkg</span> <span class="n">load</span> <span class="n">dataframe</span>
-<span class="n">pkg</span> <span class="n">load</span> <span class="n">symbolic</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="nb">statistics</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">dataframe</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 
-<span class="o">%</span><span class="n">DATA</span> <span class="o">---------------------</span>
-<span class="n">fid</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Code</span><span class="o">/</span><span class="n">Octave</span><span class="o">/</span><span class="n">plantpollinator</span><span class="o">/</span><span class="kt">Matrix</span> <span class="n">complete_2020</span><span class="o">.</span><span class="n">csv</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="kp">in</span> <span class="o">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="err">&#39;</span><span class="o">%</span><span class="n">c</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
-<span class="n">linesR</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="kp">in</span><span class="p">,</span><span class="err">&#39;</span><span class="p">(</span><span class="o">^</span><span class="p">,</span><span class="o">|</span><span class="p">)([</span><span class="o">^\</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">match</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">All</span> <span class="o">=</span> <span class="n">char</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
-<span class="n">Forest</span> <span class="o">=</span> <span class="n">cell</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">All</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">wR</span> <span class="o">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
+<span class="c">%DATA ---------------------</span>
+<span class="n">fid</span> <span class="p">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;Code/Octave/plantpollinator/Matrix complete_2020.csv&#39;</span><span class="p">);</span>
+<span class="n">in</span> <span class="p">=</span> <span class="nb">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="s">&#39;%c&#39;</span><span class="p">);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
+<span class="n">linesR</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">in</span><span class="p">,</span><span class="s">&#39;(^,|)([^\n]+)&#39;</span><span class="p">,</span> <span class="s">&#39;match&#39;</span><span class="p">);</span>
+<span class="n">All</span> <span class="p">=</span> <span class="nb">char</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
+<span class="n">Forest</span> <span class="p">=</span> <span class="nb">cell</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">All</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">wR</span> <span class="p">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
 
-<span class="o">%</span><span class="mf">1.</span> <span class="n">Print</span> <span class="n">raw</span> <span class="n">data</span> <span class="o">------------------------------</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">char</span><span class="p">(</span><span class="n">wR</span><span class="p">);</span>
-<span class="o">%------------------------------------------------</span>
+<span class="c">%1. Print raw data ------------------------------</span>
+<span class="n">R</span> <span class="p">=</span> <span class="nb">char</span><span class="p">(</span><span class="n">wR</span><span class="p">);</span>
+<span class="c">%------------------------------------------------</span>
 
 
 <span class="c">#Forest type</span>
-<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">All</span><span class="p">);</span>
-    <span class="n">wHF</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">:</span><span class="p">),</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
-    <span class="n">Forest</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="o">:</span><span class="n">wHF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">All</span><span class="p">);</span>
+    <span class="n">wHF</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,:),</span><span class="s">&#39;,&#39;</span><span class="p">);</span>
+    <span class="n">Forest</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">wHF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
 <span class="k">end</span>
 
-<span class="o">%</span><span class="mf">2.</span> <span class="n">List</span> <span class="n">sampled</span> <span class="n">sites</span> <span class="o">----------------------------------------------</span>
-<span class="n">wF</span> <span class="o">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">Forest</span><span class="p">)</span>
-<span class="o">%----------------------------------------------</span>
+<span class="c">%2. List sampled sites ----------------------------------------------</span>
+<span class="n">wF</span> <span class="p">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">Forest</span><span class="p">)</span>
+<span class="c">%----------------------------------------------</span>
 </pre></div>
 
     </div>
@@ -19208,66 +19208,66 @@ Amarante,11/01/08,Wigginsia tephracantha,2,Augochlora semiramis,2,1,,,,,
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">pkg</span> <span class="n">load</span> <span class="n">statistics</span>
-<span class="n">pkg</span> <span class="n">load</span> <span class="n">dataframe</span>
-<span class="n">pkg</span> <span class="n">load</span> <span class="n">symbolic</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="nb">statistics</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">dataframe</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 
-<span class="o">%</span><span class="n">DATA</span> <span class="o">---------------------</span>
-<span class="n">fid</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Code</span><span class="o">/</span><span class="n">Octave</span><span class="o">/</span><span class="n">plantpollinator</span><span class="o">/</span><span class="kt">Matrix</span> <span class="n">complete_2020</span><span class="o">.</span><span class="n">csv</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="kp">in</span> <span class="o">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="err">&#39;</span><span class="o">%</span><span class="n">c</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
-<span class="n">linesR</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="kp">in</span><span class="p">,</span><span class="err">&#39;</span><span class="p">(</span><span class="o">^</span><span class="p">,</span><span class="o">|</span><span class="p">)([</span><span class="o">^\</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">match</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">All</span> <span class="o">=</span> <span class="n">char</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
-<span class="n">Forest</span> <span class="o">=</span> <span class="n">cell</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">All</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">wR</span> <span class="o">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
+<span class="c">%DATA ---------------------</span>
+<span class="n">fid</span> <span class="p">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;Code/Octave/plantpollinator/Matrix complete_2020.csv&#39;</span><span class="p">);</span>
+<span class="n">in</span> <span class="p">=</span> <span class="nb">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="s">&#39;%c&#39;</span><span class="p">);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
+<span class="n">linesR</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">in</span><span class="p">,</span><span class="s">&#39;(^,|)([^\n]+)&#39;</span><span class="p">,</span> <span class="s">&#39;match&#39;</span><span class="p">);</span>
+<span class="n">All</span> <span class="p">=</span> <span class="nb">char</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
+<span class="n">Forest</span> <span class="p">=</span> <span class="nb">cell</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">All</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">wR</span> <span class="p">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
 
-<span class="o">%</span><span class="mf">1.</span> <span class="n">Print</span> <span class="n">raw</span> <span class="n">data</span> <span class="o">----------------------------</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">char</span><span class="p">(</span><span class="n">wR</span><span class="p">);</span>
-<span class="o">%</span><span class="n">pause</span>
-<span class="o">%----------------------------</span>
+<span class="c">%1. Print raw data ----------------------------</span>
+<span class="n">R</span> <span class="p">=</span> <span class="nb">char</span><span class="p">(</span><span class="n">wR</span><span class="p">);</span>
+<span class="c">%pause</span>
+<span class="c">%----------------------------</span>
 
 <span class="c">#categorize forest type</span>
-<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">All</span><span class="p">);</span>
-    <span class="n">wHF</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">:</span><span class="p">),</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
-    <span class="n">Forest</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="o">:</span><span class="n">wHF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">All</span><span class="p">);</span>
+    <span class="n">wHF</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,:),</span><span class="s">&#39;,&#39;</span><span class="p">);</span>
+    <span class="n">Forest</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">wHF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
 <span class="k">end</span>
 
 
-<span class="o">%</span><span class="mf">2.</span> <span class="n">List</span> <span class="n">sampled</span> <span class="n">sites</span> <span class="o">----------------------------------------------</span>
-<span class="n">wF</span> <span class="o">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">Forest</span><span class="p">)</span>
-<span class="o">%</span><span class="n">pause</span>
-<span class="o">%----------------------------------------------</span>
+<span class="c">%2. List sampled sites ----------------------------------------------</span>
+<span class="n">wF</span> <span class="p">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">Forest</span><span class="p">)</span>
+<span class="c">%pause</span>
+<span class="c">%----------------------------------------------</span>
 
-<span class="k">for</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">wF</span><span class="p">);</span> 
-<span class="n">TypeOutput</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">R</span><span class="p">),</span><span class="mi">4</span><span class="p">);</span>
-<span class="kt">Type</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">ForestType</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">xR</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">wHR1</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">n</span> <span class="p">=</span> <span class="mi">2</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">wF</span><span class="p">);</span> 
+<span class="n">TypeOutput</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">R</span><span class="p">),</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">Type</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">ForestType</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">xR</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">wHR1</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
-    <span class="n">cR</span> <span class="o">=</span> <span class="n">cellstr</span><span class="p">(</span><span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">));</span>
-    <span class="n">xR</span> <span class="o">=</span> <span class="n">regexpcell</span><span class="p">(</span><span class="n">linesR</span><span class="p">,</span><span class="n">cR</span><span class="p">);</span>
-    <span class="n">ForestType</span> <span class="o">=</span> <span class="n">cell</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">xR</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">cR</span> <span class="p">=</span> <span class="nb">cellstr</span><span class="p">(</span><span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">));</span>
+    <span class="n">xR</span> <span class="p">=</span> <span class="n">regexpcell</span><span class="p">(</span><span class="n">linesR</span><span class="p">,</span><span class="n">cR</span><span class="p">);</span>
+    <span class="n">ForestType</span> <span class="p">=</span> <span class="nb">cell</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">xR</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
     
-    <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">xR</span><span class="p">);</span>
-        <span class="n">wHR1</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="o">:</span><span class="p">),</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
-        <span class="n">ForestType</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">xR</span><span class="p">);</span>
+        <span class="n">wHR1</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),:),</span><span class="s">&#39;,&#39;</span><span class="p">);</span>
+        <span class="n">ForestType</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
         
     
-        <span class="o">%</span><span class="n">cH</span> <span class="o">=</span> <span class="n">cellstr</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
-        <span class="o">%</span><span class="n">xH</span> <span class="o">=</span> <span class="n">regexpcell</span><span class="p">(</span><span class="n">wF</span><span class="p">,</span><span class="n">cH</span><span class="p">)</span>
-        <span class="o">%</span><span class="n">ForestOutput</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">xH</span> 
-         <span class="o">%</span><span class="n">pause</span>
+        <span class="c">%cH = cellstr(ForestType)</span>
+        <span class="c">%xH = regexpcell(wF,cH)</span>
+        <span class="c">%ForestOutput(j,1) = xH </span>
+         <span class="c">%pause</span>
     
     <span class="k">end</span>
     
-<span class="o">%.</span><span class="mi">3</span> <span class="n">Size</span> <span class="n">each</span> <span class="n">site</span> <span class="o">-------------------------------------------</span>
+<span class="c">%.3 Size each site -------------------------------------------</span>
 <span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
-<span class="o">%</span><span class="kt">Type</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
-<span class="n">N</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">ForestType</span><span class="p">);</span>
-<span class="n">wFcom</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="n">N</span>
-<span class="o">%----------------------------------------------</span>   
+<span class="c">%Type = unique(ForestType)</span>
+<span class="n">N</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">ForestType</span><span class="p">);</span>
+<span class="n">wFcom</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="p">=</span> <span class="n">N</span>
+<span class="c">%----------------------------------------------   </span>
 <span class="k">end</span>
 </pre></div>
 
@@ -19363,88 +19363,88 @@ wFcom =
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">pkg</span> <span class="n">load</span> <span class="n">statistics</span>
-<span class="n">pkg</span> <span class="n">load</span> <span class="n">dataframe</span>
-<span class="n">pkg</span> <span class="n">load</span> <span class="n">symbolic</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="nb">statistics</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">dataframe</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 
-<span class="o">%</span><span class="n">DATA</span> <span class="o">---------------------</span>
-<span class="n">fid</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Code</span><span class="o">/</span><span class="n">Octave</span><span class="o">/</span><span class="n">plantpollinator</span><span class="o">/</span><span class="kt">Matrix</span> <span class="n">complete_2020</span><span class="o">.</span><span class="n">csv</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="kp">in</span> <span class="o">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="err">&#39;</span><span class="o">%</span><span class="n">c</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
-<span class="n">linesR</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="kp">in</span><span class="p">,</span><span class="err">&#39;</span><span class="p">(</span><span class="o">^</span><span class="p">,</span><span class="o">|</span><span class="p">)([</span><span class="o">^\</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">match</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">All</span> <span class="o">=</span> <span class="n">char</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
-<span class="n">Forest</span> <span class="o">=</span> <span class="n">cell</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">All</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">wR</span> <span class="o">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
+<span class="c">%DATA ---------------------</span>
+<span class="n">fid</span> <span class="p">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;Code/Octave/plantpollinator/Matrix complete_2020.csv&#39;</span><span class="p">);</span>
+<span class="n">in</span> <span class="p">=</span> <span class="nb">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="s">&#39;%c&#39;</span><span class="p">);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
+<span class="n">linesR</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">in</span><span class="p">,</span><span class="s">&#39;(^,|)([^\n]+)&#39;</span><span class="p">,</span> <span class="s">&#39;match&#39;</span><span class="p">);</span>
+<span class="n">All</span> <span class="p">=</span> <span class="nb">char</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
+<span class="n">Forest</span> <span class="p">=</span> <span class="nb">cell</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">All</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">wR</span> <span class="p">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
 
-<span class="o">%</span><span class="mf">1.</span> <span class="n">Print</span> <span class="n">raw</span> <span class="n">data</span> <span class="o">----------------------------</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">char</span><span class="p">(</span><span class="n">wR</span><span class="p">);</span>
-<span class="o">%----------------------------</span>
+<span class="c">%1. Print raw data ----------------------------</span>
+<span class="n">R</span> <span class="p">=</span> <span class="nb">char</span><span class="p">(</span><span class="n">wR</span><span class="p">);</span>
+<span class="c">%----------------------------</span>
 
 <span class="c">#categorize forest type</span>
-<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">All</span><span class="p">);</span>
-    <span class="n">wHF</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">:</span><span class="p">),</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
-    <span class="n">Forest</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="o">:</span><span class="n">wHF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">All</span><span class="p">);</span>
+    <span class="n">wHF</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,:),</span><span class="s">&#39;,&#39;</span><span class="p">);</span>
+    <span class="n">Forest</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">wHF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
 <span class="k">end</span>
 
-<span class="o">%</span><span class="mf">2.</span> <span class="n">List</span> <span class="n">sampled</span> <span class="n">sites</span> <span class="o">----------------------------------------------</span>
-<span class="n">wF</span> <span class="o">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">Forest</span><span class="p">);</span>
-<span class="o">%----------------------------------------------</span>
+<span class="c">%2. List sampled sites ----------------------------------------------</span>
+<span class="n">wF</span> <span class="p">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">Forest</span><span class="p">);</span>
+<span class="c">%----------------------------------------------</span>
 
-<span class="k">for</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">wF</span><span class="p">);</span> 
-<span class="n">TypeOutput</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">R</span><span class="p">),</span><span class="mi">4</span><span class="p">);</span>
-<span class="kt">Type</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">ForestType</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">xR</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">wHR1</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">n</span> <span class="p">=</span> <span class="mi">2</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">wF</span><span class="p">);</span> 
+<span class="n">TypeOutput</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">R</span><span class="p">),</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">Type</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">ForestType</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">xR</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">wHR1</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
-    <span class="n">cR</span> <span class="o">=</span> <span class="n">cellstr</span><span class="p">(</span><span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">));</span>
-    <span class="n">xR</span> <span class="o">=</span> <span class="n">regexpcell</span><span class="p">(</span><span class="n">linesR</span><span class="p">,</span><span class="n">cR</span><span class="p">);</span>
-    <span class="n">ForestType</span> <span class="o">=</span> <span class="n">cell</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">xR</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">cR</span> <span class="p">=</span> <span class="nb">cellstr</span><span class="p">(</span><span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">));</span>
+    <span class="n">xR</span> <span class="p">=</span> <span class="n">regexpcell</span><span class="p">(</span><span class="n">linesR</span><span class="p">,</span><span class="n">cR</span><span class="p">);</span>
+    <span class="n">ForestType</span> <span class="p">=</span> <span class="nb">cell</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">xR</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
     
-    <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">xR</span><span class="p">);</span>
-        <span class="n">wHR1</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="o">:</span><span class="p">),</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
-        <span class="n">ForestType</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">xR</span><span class="p">);</span>
+        <span class="n">wHR1</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),:),</span><span class="s">&#39;,&#39;</span><span class="p">);</span>
+        <span class="n">ForestType</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
         
     
-        <span class="o">%</span><span class="n">cH</span> <span class="o">=</span> <span class="n">cellstr</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
-        <span class="o">%</span><span class="n">xH</span> <span class="o">=</span> <span class="n">regexpcell</span><span class="p">(</span><span class="n">wF</span><span class="p">,</span><span class="n">cH</span><span class="p">)</span>
-        <span class="o">%</span><span class="n">ForestOutput</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">xH</span> 
-         <span class="o">%</span><span class="n">pause</span>
+        <span class="c">%cH = cellstr(ForestType)</span>
+        <span class="c">%xH = regexpcell(wF,cH)</span>
+        <span class="c">%ForestOutput(j,1) = xH </span>
+         <span class="c">%pause</span>
     
     <span class="k">end</span>
     
-<span class="o">%.</span><span class="mi">3</span> <span class="n">Size</span> <span class="n">each</span> <span class="n">site</span> <span class="o">-------------------------------------------</span>
+<span class="c">%.3 Size each site -------------------------------------------</span>
 <span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-<span class="o">%</span><span class="kt">Type</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
-<span class="n">N</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
-<span class="n">wFcom</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="n">N</span>
-<span class="o">%----------------------------------------------</span>    
+<span class="c">%Type = unique(ForestType)</span>
+<span class="n">N</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
+<span class="n">wFcom</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="p">=</span> <span class="n">N</span>
+<span class="c">%----------------------------------------------    </span>
     
-<span class="o">%</span><span class="mf">4.</span> <span class="n">Plot</span> <span class="n">absolute</span> <span class="n">numbers</span>
-<span class="n">N</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="kt">Type</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">);</span><span class="n">N</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">ForestType</span><span class="p">);</span>
-<span class="n">UNI</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="kt">Type</span><span class="p">);</span>
-<span class="n">red</span><span class="o">=</span><span class="n">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">green</span><span class="o">=</span><span class="n">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">blue</span><span class="o">=</span><span class="n">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="c">%4. Plot absolute numbers</span>
+<span class="n">N</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">Type</span> <span class="p">=</span> <span class="nb">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">);</span><span class="n">N</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">ForestType</span><span class="p">);</span>
+<span class="n">UNI</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">Type</span><span class="p">);</span>
+<span class="n">red</span><span class="p">=</span><span class="nb">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">green</span><span class="p">=</span><span class="nb">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">blue</span><span class="p">=</span><span class="nb">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
     
-  <span class="n">R</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
-  <span class="k">for</span> <span class="n">rep</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">R</span><span class="p">;</span> 
-      <span class="n">U</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
-   <span class="k">for</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">N</span><span class="p">;</span>
-       <span class="n">S</span> <span class="o">=</span> <span class="n">unidrnd</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">xR</span><span class="p">),</span><span class="n">r</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span><span class="o">%</span><span class="mi">100</span> <span class="n">replicates</span>
-       <span class="n">L</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">(</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">:</span><span class="n">r</span><span class="p">)));</span>
-       <span class="n">U</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
-       <span class="n">U</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">L</span><span class="p">);</span>  
+  <span class="n">R</span><span class="p">=</span><span class="mi">10</span><span class="p">;</span>
+  <span class="k">for</span> <span class="n">rep</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">R</span><span class="p">;</span> 
+      <span class="n">U</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+   <span class="k">for</span> <span class="n">r</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">;</span>
+       <span class="n">S</span> <span class="p">=</span> <span class="nb">unidrnd</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">xR</span><span class="p">),</span><span class="n">r</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span><span class="c">%100 replicates</span>
+       <span class="n">L</span> <span class="p">=</span> <span class="nb">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">(</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">)));</span>
+       <span class="n">U</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">r</span><span class="p">;</span>
+       <span class="n">U</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">L</span><span class="p">);</span>  
    <span class="k">end</span>
-   <span class="n">hold</span> <span class="n">on</span>
+   <span class="nb">hold</span> <span class="n">on</span>
    
-   <span class="n">max</span><span class="p">(</span><span class="n">U</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-   <span class="n">plot</span><span class="p">(</span><span class="n">U</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">U</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="sc">&#39;k&#39;</span><span class="p">,</span><span class="err">&#39;</span><span class="n">color</span><span class="o">&#39;</span><span class="p">,[</span><span class="n">red</span> <span class="n">green</span> <span class="n">blue</span><span class="p">],</span><span class="err">&#39;</span><span class="n">Markersize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">36</span><span class="p">)</span>
-  <span class="k">end</span><span class="o">%</span><span class="n">rep</span> 
+   <span class="nb">max</span><span class="p">(</span><span class="n">U</span><span class="p">(:,</span><span class="mi">2</span><span class="p">))</span>
+   <span class="nb">plot</span><span class="p">(</span><span class="n">U</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">U</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="s">&#39;color&#39;</span><span class="p">,[</span><span class="n">red</span> <span class="n">green</span> <span class="n">blue</span><span class="p">],</span><span class="s">&#39;Markersize&#39;</span><span class="p">,</span><span class="mi">36</span><span class="p">)</span>
+  <span class="k">end</span><span class="c">%rep </span>
 <span class="k">end</span>
-<span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="err">&#39;</span><span class="n">FontSize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Sampling</span><span class="sc">&#39;,&#39;</span><span class="n">fontsize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Species</span> <span class="kt">Number</span><span class="sc">&#39;,&#39;</span><span class="n">fontsize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Sampling&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Species Number&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -19729,93 +19729,93 @@ ans =  25
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">pkg</span> <span class="n">load</span> <span class="n">statistics</span>
-<span class="n">pkg</span> <span class="n">load</span> <span class="n">dataframe</span>
-<span class="n">pkg</span> <span class="n">load</span> <span class="n">symbolic</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">pkg</span> <span class="nb">load</span> <span class="nb">statistics</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">dataframe</span>
+<span class="n">pkg</span> <span class="nb">load</span> <span class="n">symbolic</span>
 
-<span class="o">%</span><span class="n">DATA</span> <span class="o">---------------------</span>
-<span class="n">fid</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Code</span><span class="o">/</span><span class="n">Octave</span><span class="o">/</span><span class="n">plantpollinator</span><span class="o">/</span><span class="kt">Matrix</span> <span class="n">complete_2020</span><span class="o">.</span><span class="n">csv</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="kp">in</span> <span class="o">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="err">&#39;</span><span class="o">%</span><span class="n">c</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
-<span class="n">linesR</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="kp">in</span><span class="p">,</span><span class="err">&#39;</span><span class="p">(</span><span class="o">^</span><span class="p">,</span><span class="o">|</span><span class="p">)([</span><span class="o">^\</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">match</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">All</span> <span class="o">=</span> <span class="n">char</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
-<span class="n">Forest</span> <span class="o">=</span> <span class="n">cell</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">All</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">wR</span> <span class="o">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
+<span class="c">%DATA ---------------------</span>
+<span class="n">fid</span> <span class="p">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;Code/Octave/plantpollinator/Matrix complete_2020.csv&#39;</span><span class="p">);</span>
+<span class="n">in</span> <span class="p">=</span> <span class="nb">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="s">&#39;%c&#39;</span><span class="p">);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
+<span class="n">linesR</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">in</span><span class="p">,</span><span class="s">&#39;(^,|)([^\n]+)&#39;</span><span class="p">,</span> <span class="s">&#39;match&#39;</span><span class="p">);</span>
+<span class="n">All</span> <span class="p">=</span> <span class="nb">char</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
+<span class="n">Forest</span> <span class="p">=</span> <span class="nb">cell</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">All</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">wR</span> <span class="p">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">linesR</span><span class="p">);</span>
 
-<span class="o">%</span><span class="mf">1.</span> <span class="n">Print</span> <span class="n">raw</span> <span class="n">data</span> <span class="o">----------------------------</span>
-<span class="n">R</span> <span class="o">=</span> <span class="n">char</span><span class="p">(</span><span class="n">wR</span><span class="p">);</span>
-<span class="o">%----------------------------</span>
+<span class="c">%1. Print raw data ----------------------------</span>
+<span class="n">R</span> <span class="p">=</span> <span class="nb">char</span><span class="p">(</span><span class="n">wR</span><span class="p">);</span>
+<span class="c">%----------------------------</span>
 
 <span class="c">#categorize forest type</span>
-<span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">All</span><span class="p">);</span>
-    <span class="n">wHF</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="o">:</span><span class="p">),</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
-    <span class="n">Forest</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="o">:</span><span class="n">wHF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">All</span><span class="p">);</span>
+    <span class="n">wHF</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,:),</span><span class="s">&#39;,&#39;</span><span class="p">);</span>
+    <span class="n">Forest</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">All</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">wHF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
 <span class="k">end</span>
 
-<span class="o">%</span><span class="mf">2.</span> <span class="n">List</span> <span class="n">sampled</span> <span class="n">sites</span> <span class="o">----------------------------------------------</span>
-<span class="n">wF</span> <span class="o">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">Forest</span><span class="p">);</span>
-<span class="o">%----------------------------------------------</span>
+<span class="c">%2. List sampled sites ----------------------------------------------</span>
+<span class="n">wF</span> <span class="p">=</span> <span class="n">unique_no_sort</span><span class="p">(</span><span class="n">Forest</span><span class="p">);</span>
+<span class="c">%----------------------------------------------</span>
 
-<span class="k">for</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">wF</span><span class="p">);</span> 
-<span class="n">TypeOutput</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">R</span><span class="p">),</span><span class="mi">4</span><span class="p">);</span>
-<span class="kt">Type</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">ForestType</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">xR</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">wHR1</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">n</span> <span class="p">=</span> <span class="mi">2</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">wF</span><span class="p">);</span> 
+<span class="n">TypeOutput</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">R</span><span class="p">),</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">Type</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">ForestType</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">xR</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">wHR1</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
 <span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
-    <span class="n">cR</span> <span class="o">=</span> <span class="n">cellstr</span><span class="p">(</span><span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">));</span>
-    <span class="n">xR</span> <span class="o">=</span> <span class="n">regexpcell</span><span class="p">(</span><span class="n">linesR</span><span class="p">,</span><span class="n">cR</span><span class="p">);</span>
-    <span class="n">ForestType</span> <span class="o">=</span> <span class="n">cell</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">xR</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">cR</span> <span class="p">=</span> <span class="nb">cellstr</span><span class="p">(</span><span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">));</span>
+    <span class="n">xR</span> <span class="p">=</span> <span class="n">regexpcell</span><span class="p">(</span><span class="n">linesR</span><span class="p">,</span><span class="n">cR</span><span class="p">);</span>
+    <span class="n">ForestType</span> <span class="p">=</span> <span class="nb">cell</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">xR</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
     
-    <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">length</span><span class="p">(</span><span class="n">xR</span><span class="p">);</span>
-        <span class="n">wHR1</span> <span class="o">=</span> <span class="n">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="o">:</span><span class="p">),</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
-        <span class="n">ForestType</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="o">:</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">xR</span><span class="p">);</span>
+        <span class="n">wHR1</span> <span class="p">=</span> <span class="nb">regexp</span><span class="p">(</span><span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),:),</span><span class="s">&#39;,&#39;</span><span class="p">);</span>
+        <span class="n">ForestType</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">All</span><span class="p">(</span><span class="n">xR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">wHR1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
         
     
-        <span class="o">%</span><span class="n">cH</span> <span class="o">=</span> <span class="n">cellstr</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
-        <span class="o">%</span><span class="n">xH</span> <span class="o">=</span> <span class="n">regexpcell</span><span class="p">(</span><span class="n">wF</span><span class="p">,</span><span class="n">cH</span><span class="p">)</span>
-        <span class="o">%</span><span class="n">ForestOutput</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">xH</span> 
-         <span class="o">%</span><span class="n">pause</span>
+        <span class="c">%cH = cellstr(ForestType)</span>
+        <span class="c">%xH = regexpcell(wF,cH)</span>
+        <span class="c">%ForestOutput(j,1) = xH </span>
+         <span class="c">%pause</span>
     
     <span class="k">end</span>
     
-<span class="o">%.</span><span class="mi">3</span> <span class="n">Size</span> <span class="n">each</span> <span class="n">site</span> <span class="o">-------------------------------------------</span>
+<span class="c">%.3 Size each site -------------------------------------------</span>
 <span class="n">wF</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-<span class="o">%</span><span class="kt">Type</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
-<span class="n">N</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
-<span class="n">wFcom</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="n">N</span>
-<span class="o">%----------------------------------------------</span>    
+<span class="c">%Type = unique(ForestType)</span>
+<span class="n">N</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
+<span class="n">wFcom</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span> <span class="p">=</span> <span class="n">N</span>
+<span class="c">%----------------------------------------------    </span>
 
-<span class="o">%</span><span class="mf">4.</span> <span class="n">Rarefaction</span> <span class="o">------------------------------------------</span>
-<span class="o">%</span><span class="n">A</span><span class="o">.</span> <span class="n">Pick</span> <span class="n">up</span> <span class="n">more</span><span class="o">-</span><span class="n">sampled</span> <span class="n">site</span>
-<span class="o">%</span><span class="n">B</span><span class="o">.</span> <span class="n">Obtain</span> <span class="n">n</span><span class="o">-</span><span class="n">subsamplings</span> <span class="n">of</span> <span class="n">size</span> <span class="n">of</span> <span class="n">less</span><span class="o">-</span><span class="n">sampled</span> <span class="n">site</span>
-<span class="o">%</span><span class="n">C</span><span class="o">.</span> <span class="n">Compare</span> <span class="n">curves</span> <span class="n">along</span> <span class="n">subsamplings</span> <span class="n">of</span> <span class="n">different</span> <span class="n">sizes</span>
-<span class="n">MIN</span><span class="o">=</span><span class="mi">348</span>
-<span class="n">N</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
-<span class="n">UNI</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="kt">Type</span><span class="p">);</span>
-<span class="kt">Type</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">);</span>
-<span class="n">red</span><span class="o">=</span><span class="n">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">green</span><span class="o">=</span><span class="n">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">blue</span><span class="o">=</span><span class="n">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="c">%4. Rarefaction ------------------------------------------</span>
+<span class="c">%A. Pick up more-sampled site</span>
+<span class="c">%B. Obtain n-subsamplings of size of less-sampled site</span>
+<span class="c">%C. Compare curves along subsamplings of different sizes</span>
+<span class="n">MIN</span><span class="p">=</span><span class="mi">348</span>
+<span class="n">N</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">ForestType</span><span class="p">)</span>
+<span class="n">UNI</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">Type</span><span class="p">);</span>
+<span class="n">Type</span> <span class="p">=</span> <span class="nb">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">);</span>
+<span class="n">red</span><span class="p">=</span><span class="nb">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">green</span><span class="p">=</span><span class="nb">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">blue</span><span class="p">=</span><span class="nb">unifrnd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="n">R</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
-<span class="k">for</span> <span class="n">rep</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">R</span><span class="p">;</span> 
-      <span class="n">U</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
-      <span class="k">for</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span><span class="n">MIN</span><span class="p">;</span>
-          <span class="n">S</span> <span class="o">=</span> <span class="n">unidrnd</span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">xR</span><span class="p">),</span><span class="n">r</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span><span class="o">%</span><span class="n">R</span> <span class="n">replicates</span>
-          <span class="n">L</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">(</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">:</span><span class="n">r</span><span class="p">)));</span>
-          <span class="n">U</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
-          <span class="n">U</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="n">length</span><span class="p">(</span><span class="n">L</span><span class="p">);</span>  
+<span class="n">R</span><span class="p">=</span><span class="mi">10</span><span class="p">;</span>
+<span class="k">for</span> <span class="n">rep</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">R</span><span class="p">;</span> 
+      <span class="n">U</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+      <span class="k">for</span> <span class="n">r</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">MIN</span><span class="p">;</span>
+          <span class="n">S</span> <span class="p">=</span> <span class="nb">unidrnd</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">xR</span><span class="p">),</span><span class="n">r</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span><span class="c">%R replicates</span>
+          <span class="n">L</span> <span class="p">=</span> <span class="nb">unique</span><span class="p">(</span><span class="n">ForestType</span><span class="p">(</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">)));</span>
+          <span class="n">U</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">r</span><span class="p">;</span>
+          <span class="n">U</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">L</span><span class="p">);</span>  
       <span class="k">end</span>
-      <span class="n">hold</span> <span class="n">on</span>
-      <span class="n">max</span><span class="p">(</span><span class="n">U</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-      <span class="n">h</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">U</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">U</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="sc">&#39;k&#39;</span><span class="p">,</span><span class="err">&#39;</span><span class="n">color</span><span class="o">&#39;</span><span class="p">,[</span><span class="n">red</span> <span class="n">green</span> <span class="n">blue</span><span class="p">],</span><span class="err">&#39;</span><span class="n">Markersize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">36</span><span class="p">);</span>
+      <span class="nb">hold</span> <span class="n">on</span>
+      <span class="nb">max</span><span class="p">(</span><span class="n">U</span><span class="p">(:,</span><span class="mi">2</span><span class="p">))</span>
+      <span class="n">h</span> <span class="p">=</span> <span class="nb">plot</span><span class="p">(</span><span class="n">U</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">U</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="s">&#39;color&#39;</span><span class="p">,[</span><span class="n">red</span> <span class="n">green</span> <span class="n">blue</span><span class="p">],</span><span class="s">&#39;Markersize&#39;</span><span class="p">,</span><span class="mi">36</span><span class="p">);</span>
      
-<span class="k">end</span><span class="o">%</span><span class="n">rep</span> 
+<span class="k">end</span><span class="c">%rep </span>
     
-<span class="k">end</span><span class="o">%</span><span class="n">forest</span>
-<span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="err">&#39;</span><span class="n">FontSize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="err">&#39;</span><span class="kt">Number</span> <span class="n">Individuals</span> <span class="n">Sampled</span> <span class="sc">&#39;,&#39;</span><span class="n">fontsize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Species</span> <span class="kt">Number</span><span class="sc">&#39;,&#39;</span><span class="n">fontsize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
+<span class="k">end</span><span class="c">%forest</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Number Individuals Sampled &#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Species Number&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -20124,9 +20124,9 @@ ans =  25
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">fid</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Data</span><span class="o">/</span><span class="n">plantpollinator</span><span class="o">/</span><span class="n">spesamarea</span><span class="o">.</span><span class="n">csv</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="kp">in</span> <span class="o">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="err">&#39;</span><span class="o">%</span><span class="n">c</span><span class="o">&#39;</span><span class="p">);</span>
-<span class="n">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">fid</span> <span class="p">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;Data/plantpollinator/spesamarea.csv&#39;</span><span class="p">);</span>
+<span class="n">in</span> <span class="p">=</span> <span class="nb">fscanf</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span><span class="s">&#39;%c&#39;</span><span class="p">);</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fid</span><span class="p">);</span>
 
 <span class="n">Name</span>	<span class="n">Area</span>	<span class="n">Has</span>		<span class="n">Non</span> <span class="n">Rar</span>	<span class="n">Rar</span>
 <span class="n">La</span> <span class="n">Paja</span>	<span class="mi">12</span>	<span class="mf">112.696</span>	<span class="mi">413</span>	<span class="mi">40</span>	<span class="mi">38</span>
@@ -20153,9 +20153,9 @@ ans =  25
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="c">## Samping vs Island area</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">## Samping vs Island area</span>
 
-<span class="n">Q</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span> <span class="mf">112.696</span> <span class="mi">413</span> <span class="mi">40</span> <span class="mi">38</span>
+<span class="n">Q</span> <span class="p">=</span> <span class="p">[</span><span class="mi">12</span> <span class="mf">112.696</span> <span class="mi">413</span> <span class="mi">40</span> <span class="mi">38</span>
 <span class="mi">13</span> <span class="mf">330.981</span> <span class="mi">479</span> <span class="mi">46</span> <span class="mi">45</span>
 <span class="mi">13</span> <span class="mf">104.301</span> <span class="mi">348</span> <span class="mi">29</span> <span class="mi">29</span>
 <span class="mi">49</span> <span class="mf">0.191</span> <span class="mi">365</span> <span class="mi">25</span> <span class="mi">25</span>
@@ -20168,10 +20168,10 @@ ans =  25
 <span class="mi">2079</span> <span class="mf">1731.828</span> <span class="mi">629</span> <span class="mi">46</span> <span class="mi">42</span>
 <span class="mi">2147</span> <span class="mf">1783.071</span> <span class="mi">619</span> <span class="mi">50</span> <span class="mi">45</span><span class="p">]</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">Q</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="err">&#39;</span><span class="n">ok</span><span class="o">&#39;</span><span class="p">)</span>
-<span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="err">&#39;</span><span class="n">FontSize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Has</span><span class="sc">&#39;,&#39;</span><span class="n">fontsize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Inds</span><span class="o">.</span> <span class="n">Sampled</span><span class="sc">&#39;,&#39;</span><span class="n">fontsize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">Q</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="n">Q</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span><span class="s">&#39;ok&#39;</span><span class="p">)</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Has&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Inds. Sampled&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -20231,7 +20231,7 @@ ans =  25
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span> <span class="mf">112.696</span> <span class="mi">413</span> <span class="mi">40</span> <span class="mi">38</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">Q</span> <span class="p">=</span> <span class="p">[</span><span class="mi">12</span> <span class="mf">112.696</span> <span class="mi">413</span> <span class="mi">40</span> <span class="mi">38</span>
 <span class="mi">13</span> <span class="mf">330.981</span> <span class="mi">479</span> <span class="mi">46</span> <span class="mi">45</span>
 <span class="mi">13</span> <span class="mf">104.301</span> <span class="mi">348</span> <span class="mi">29</span> <span class="mi">29</span>
 <span class="mi">49</span> <span class="mf">0.191</span> <span class="mi">365</span> <span class="mi">25</span> <span class="mi">25</span>
@@ -20244,10 +20244,10 @@ ans =  25
 <span class="mi">2079</span> <span class="mf">1731.828</span> <span class="mi">629</span> <span class="mi">46</span> <span class="mi">42</span>
 <span class="mi">2147</span> <span class="mf">1783.071</span> <span class="mi">619</span> <span class="mi">50</span> <span class="mi">45</span><span class="p">]</span>
 
-<span class="n">semilogx</span><span class="p">(</span><span class="n">Q</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">Q</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="err">&#39;</span><span class="n">or</span><span class="o">&#39;</span><span class="p">)</span>
-<span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="err">&#39;</span><span class="n">FontSize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Has</span><span class="sc">&#39;,&#39;</span><span class="n">fontsize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Species</span> <span class="kt">Number</span> <span class="p">(</span><span class="n">Non</span> <span class="n">Rar</span><span class="p">)</span><span class="sc">&#39;,&#39;</span><span class="n">fontsize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="nb">semilogx</span><span class="p">(</span><span class="n">Q</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="n">Q</span><span class="p">(:,</span><span class="mi">4</span><span class="p">),</span><span class="s">&#39;or&#39;</span><span class="p">)</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Has&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Species Number (Non Rar)&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -20307,7 +20307,7 @@ ans =  25
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span> <span class="mf">112.696</span> <span class="mi">413</span> <span class="mi">40</span> <span class="mi">38</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">Q</span> <span class="p">=</span> <span class="p">[</span><span class="mi">12</span> <span class="mf">112.696</span> <span class="mi">413</span> <span class="mi">40</span> <span class="mi">38</span>
 <span class="mi">13</span> <span class="mf">330.981</span> <span class="mi">479</span> <span class="mi">46</span> <span class="mi">45</span>
 <span class="mi">13</span> <span class="mf">104.301</span> <span class="mi">348</span> <span class="mi">29</span> <span class="mi">29</span>
 <span class="mi">49</span> <span class="mf">0.191</span> <span class="mi">365</span> <span class="mi">25</span> <span class="mi">25</span>
@@ -20320,10 +20320,10 @@ ans =  25
 <span class="mi">2079</span> <span class="mf">1731.828</span> <span class="mi">629</span> <span class="mi">46</span> <span class="mi">42</span>
 <span class="mi">2147</span> <span class="mf">1783.071</span> <span class="mi">619</span> <span class="mi">50</span> <span class="mi">45</span><span class="p">]</span>
 
-<span class="n">semilogx</span><span class="p">(</span><span class="n">Q</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">Q</span><span class="p">(</span><span class="o">:</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="err">&#39;</span><span class="n">ob</span><span class="o">&#39;</span><span class="p">)</span>
-<span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="err">&#39;</span><span class="n">FontSize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Has</span><span class="sc">&#39;,&#39;</span><span class="n">fontsize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="err">&#39;</span><span class="n">Species</span> <span class="kt">Number</span> <span class="p">(</span><span class="n">Rar</span><span class="p">)</span><span class="sc">&#39;,&#39;</span><span class="n">fontsize</span><span class="o">&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="nb">semilogx</span><span class="p">(</span><span class="n">Q</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="n">Q</span><span class="p">(:,</span><span class="mi">5</span><span class="p">),</span><span class="s">&#39;ob&#39;</span><span class="p">)</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Has&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Species Number (Rar)&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -20384,19 +20384,13 @@ ans =  25
 <h1 id="Take-home-message">Take home message<a class="anchor-link" href="#Take-home-message">&#182;</a></h1><h2 id="Datasets-contain-samplings-with-different-size">Datasets contain samplings with different size<a class="anchor-link" href="#Datasets-contain-samplings-with-different-size">&#182;</a></h2><h3 id="Rarefaction-accounts-for-sampling-size-using-a-variety-of-randomizations">Rarefaction accounts for sampling size using a variety of randomizations<a class="anchor-link" href="#Rarefaction-accounts-for-sampling-size-using-a-variety-of-randomizations">&#182;</a></h3><h1 id="Pseudo-algorithm">Pseudo-algorithm<a class="anchor-link" href="#Pseudo-algorithm">&#182;</a></h1><h2 id="Pick-up-less-sampled-site">Pick up less sampled site<a class="anchor-link" href="#Pick-up-less-sampled-site">&#182;</a></h2><h2 id="Obtain-subsamplings-of-the-size-of-the-less-sampled-site">Obtain subsamplings of the size of the less sampled site<a class="anchor-link" href="#Obtain-subsamplings-of-the-size-of-the-less-sampled-site">&#182;</a></h2><h2 id="Compare-curves-to-decipher-the-statistical-significance">Compare curves to decipher the statistical significance<a class="anchor-link" href="#Compare-curves-to-decipher-the-statistical-significance">&#182;</a></h2>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-julia"><pre><span></span>
-</pre></div>
-
-    </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h1><h2 id="How-would-you-account-for-different-sampling-size?">How would you account for different sampling size?<a class="anchor-link" href="#How-would-you-account-for-different-sampling-size?">&#182;</a></h2><h2 id="How-would-you-account-for-time,-space,-and-heterogeneity-in-the-sampling-design?">How would you account for time, space, and heterogeneity in the sampling design?<a class="anchor-link" href="#How-would-you-account-for-time,-space,-and-heterogeneity-in-the-sampling-design?">&#182;</a></h2><h2 id="How-do-you-standarize-data-heterogeneity?">How do you standarize data heterogeneity?<a class="anchor-link" href="#How-do-you-standarize-data-heterogeneity?">&#182;</a></h2>
 </div>
 </div>
-
 </div></section></section>
 </div>
 </div>
