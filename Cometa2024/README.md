@@ -32,3 +32,11 @@ https://rawcdn.githack.com/melian009/Ecoevon/main/tag4/div.slides.html
 jupyter notebook list
 jupyter notebook stop 8888
 https://raw.githack.com/faq
+
+
+17 April 2024
+Cometa Diversification in multidimensional landscapes talk Deparment meeting
+Using tag4
+drwxrwxr-x   3 melihan melihan   4096 Apr 17 08:39 tag4
+
+
