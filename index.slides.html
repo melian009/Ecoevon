@@ -14721,7 +14721,7 @@ Paths to build theory in biodiversity research
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="Infiniteisolatedlayers.png" alt="drawing" width="1200" height="1200"/></p>
+<p><img src="Infiniteisolatedlayers.png" alt="drawing" width="2000" height="2000"/></p>
 
 </div>
 </div>
@@ -14797,15 +14797,15 @@ Paths to build theory in biodiversity research
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="GPA">GPA<a class="anchor-link" href="#GPA">&#182;</a></h2><p>\begin{equation}
+<h2 id="Z-can-be-derived-from-the-genotype-to-phenotype-map">Z can be derived from the genotype-to-phenotype map<a class="anchor-link" href="#Z-can-be-derived-from-the-genotype-to-phenotype-map">&#182;</a></h2><p>\begin{equation}
  {\Large \bf{z}_{j} = {f}(\bf{L}), {f}:\mathbb{R}^{m} \rightarrow \mathbb{R}^{z}}
  \end{equation}</p>
 \begin{equation}
 {\Large \bf{Z} = {f}(\bf{L}) = D[{f}(L)]=\bf{B}\bf{Y}},
 \end{equation}<p>where</p>
-<p>$\bf{B}$ or the pleiotropy matrix size $(\bf{L}, \bf{Z})$</p>
+<p>$\bf{B}$ pleiotropy matrix size $(\bf{L}, \bf{Z})$</p>
 <p>$\bf{Y}$ expression array</p>
-<p>$\bf{E}$, epistasis matrix</p>
+<p>$\bf{E}$ epistasis matrix size $(\bf{L}, \bf{L})$</p>
 <p>Individual’s phenotype is given by the vector $\bf{Z}$</p>
 \begin{equation}
 {\Large \bf{Z} = \bf{B}^{T} \bf{E}  \bf{Y} + \bf{\epsilon}},
@@ -14822,7 +14822,12 @@ Paths to build theory in biodiversity research
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Abiotic-trait">Abiotic trait<a class="anchor-link" href="#Abiotic-trait">&#182;</a></h2>\begin{equation}
 {\Large D(z_{ia}) = \lvert 0.5 - cdf(\mathcal{N}(\theta_{a}, \sigma^2), z_{ia}) \lvert},
-\end{equation}<p>where $D(z_{ia})$ is the distance of abiotic trait of individual $i$ to its optimum, $\theta_{a}$ is the optimal value used as the mean of a normal distribution, $\sigma^{2}$ is the variance of the normal distribution, and $z_{ia}$ is the value of the abiotic trait $i$ and $cdf$ is cumulative distribution function. $D(z_{ia})$ is a probability and is calculated by the number of standard deviations that the agent's phenotype is different from the optimal phenotype. The fitness of the abiotic trait of individual $i$ is then given by</p>
+\end{equation}<p>$D(z_{ia})$ is the distance of abiotic trait of individual $i$ to its optimum,</p>
+<p>$\theta_{a}$ is the optimal value used as the mean of a normal distribution,</p>
+<p>$\sigma^{2}$ is the variance of the normal distribution,</p>
+<p>$z_{ia}$ is the value of the abiotic trait $i$ and</p>
+<p>$cdf$ is cumulative distribution function.</p>
+<p>The fitness of the abiotic trait of individual $i$ is then given by</p>
 \begin{equation}
 {\Large W(z_{ia}) = 1 - D(z_{ia})}
 \end{equation}
@@ -14838,11 +14843,12 @@ Paths to build theory in biodiversity research
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Biotic-trait">Biotic trait<a class="anchor-link" href="#Biotic-trait">&#182;</a></h2>\begin{equation}
 {\Large D_{z_{ib} z_{jb}} = \lvert 0.5 - cdf(\mathcal{N}(z_{ib}, \sigma^2), z_{jb}) \lvert}
-\end{equation}<p>where $D_{z_{ib} z_{jb}}$ is the distance between individual biotic phenotypes $i$ and $j$. $\sigma^2$ is the variance of a normal distribution. The larger the $\sigma^2$, the less significant are small phenotypic differences between the two individuals. If two individuals interact, their fitness increases or decreases depending on the nature of their species-species interactions, meaning how much an interaction affect each of the species is a function of their biology. The strength of an interaction is a function of species-species coefficient and the phenotypic distance between the two individuals
+\end{equation}<p>where $D_{z_{ib} z_{jb}}$ is the distance between individual biotic phenotypes $i$ and $j$.</p>
+<p>$\sigma^2$ is the variance of a normal distribution. The larger the $\sigma^2$, the less significant are small phenotypic differences between the two individuals. If two individuals interact, their fitness increases or decreases depending on the nature of their species-species interactions, meaning how much an interaction affect each of the species is a function of their biology.</p>
+<p>The strength of an interaction is a function of species-species coefficient and the phenotypic distance between the two individuals</p>
 \begin{equation}
 {\Large s_{z_{ib} z_{jb}} = (1 - D_{z_{ib} z_{jb}}) \times \lvert c_{z_{xb} z_{yb}} \lvert \times sign(c_{z_{xb} z_{yb}})}
-\end{equation}</p>
-
+\end{equation}
 </div>
 </div>
 </div>
@@ -14855,10 +14861,10 @@ Paths to build theory in biodiversity research
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Fitness">Fitness<a class="anchor-link" href="#Fitness">&#182;</a></h2>\begin{equation}
 {\Large W_{Z_{i}} = W_{z_{ia}} + s_{z_{ib} z_{jb}}},
-\end{equation}<p>and the fitness function takes into account the selection coefficient as
+\end{equation}<p>and the fitness function takes into account the selection coefficient as</p>
 \begin{equation}
 {\Large W_{Z_{i}} = 1 - ( (1 - W_{Z_{i}}) \times s_x)}
-\end{equation}</p>
+\end{equation}<p></p>
 
 </div>
 </div>
@@ -14883,17 +14889,17 @@ Paths to build theory in biodiversity research
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Take-home-message">Take home message<a class="anchor-link" href="#Take-home-message">&#182;</a></h2><ul>
-<li><p>Predict as old theory: Gene and trait distribution</p>
+<li><p>Predict as old theory: Gene and trait distribution, LD, Population structure and all the Fst varieties.</p>
 <p>** Assumption: infinite loci with weak effects for a large number of genes and traits</p>
 </li>
 </ul>
 <ul>
-<li><p>New predictions for existing data: Complex GPA to diversification and biodiversity patterns</p>
+<li><p>New predictions for existing data: Complex GPA to diversification and biodiversity patterns (Number of species, diversity, ecological networks)</p>
 <p>** Assumption: Evolving pleiotropy, epistasis and regulation but still GPA can be unique</p>
 </li>
 </ul>
 <ul>
-<li><p>New predictions no data: Complex GPA in biodiversity seascapes</p>
+<li><p>New predictions no data: Complex GPA in biodiversity seascapes (dimensionality of the fitness seascape)</p>
 <p>** Assumption: Fitness gradients from trait hierarchy to heterarchy in complex multidimensional seascapes</p>
 </li>
 </ul>
