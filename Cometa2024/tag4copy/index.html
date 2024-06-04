@@ -14659,26 +14659,28 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><font size="5">
-Paths to build theory in biodiversity research 
+Diversification in multidimensional genotype-phenotype landscapes
 <font size="3"></p>
-<p>Symposium Fishec / AquaEco Symposium 2024, June 5</p>
-<p>From genes, traits and functions to species diversity in contrasting climate zones</p>
 <hr>
-<h4 id="Carlos-J.-Meli%C3%A1n">Carlos J. Meli&#225;n<a class="anchor-link" href="#Carlos-J.-Meli%C3%A1n">&#182;</a></h4><h4 id="https://github.com/melian009/Ecoevon/tree/master/SymposiumKB2024"><a href="https://github.com/melian009/Ecoevon/tree/master/SymposiumKB2024">https://github.com/melian009/Ecoevon/tree/master/SymposiumKB2024</a><a class="anchor-link" href="#https://github.com/melian009/Ecoevon/tree/master/SymposiumKB2024">&#182;</a></h4>
+<h4 id="https://github.com/melian009/Ecoevon/tree/master/Cometa2024"><a href="https://github.com/melian009/Ecoevon/tree/master/Cometa2024">https://github.com/melian009/Ecoevon/tree/master/Cometa2024</a><a class="anchor-link" href="#https://github.com/melian009/Ecoevon/tree/master/Cometa2024">&#182;</a></h4>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Hallmarks-of-any-theory:">Hallmarks of any theory:<a class="anchor-link" href="#Hallmarks-of-any-theory:">&#182;</a></h2><ul>
-<li>The new theory succeeds wherever the old theory did.</li>
-<li>The new theory explains an observed phenomenon that the old theory couldn’t account for.</li>
-<li>And the new theory, in comparison to the old theory, makes differing predictions that we can then go out and test.</li>
+<h3 id="References">References<a class="anchor-link" href="#References">&#182;</a></h3><ul>
+<li>Rainey, P., Travisano, M. (1998). Adaptive radiation in a heterogeneous environment. Nature 394:69–72.</li>
+<li>Melo and Marroig (2015). Directional selection can drive the evolution of modularity in complex traits. PNAS, 112:470-475.</li>
+<li>Goswami et al (2015). The fossil record of phenotypic integration and modularity: A deep-time perspective on developmental and evolutionary dynamics. PNAS, 112:4891-4896.</li>
+<li>Laughlin D.C., and Messier J. (2015). Fitness of multidimensional phenotypes in dynamic adaptive landscapes. TREE, 30:487-496.</li>
+<li>Barros, C. et al. (2016). N‐dimensional hypervolumes to study stability of complex ecosystems. Ecol. Lett., 19:729–742.</li>
+<li>Boyle et al. (2017). An Expanded View of Complex Traits: From Polygenic to Omnigenic. Cell. 169:1177-1186.</li>
+<li>Melián et al. (2018). Deciphering the interdependence between ecological and evolutionary networks. TREE, 33:504-512.</li>
 </ul>
 
 </div>
@@ -14691,7 +14693,7 @@ Paths to build theory in biodiversity research
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="multilayerfoodweb.jpeg" alt="drawing" width="1000" height="1000"/></p>
+<p><img src="download.png" alt="drawing" width="800" height="800"/></p>
 
 </div>
 </div>
@@ -14703,7 +14705,42 @@ Paths to build theory in biodiversity research
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="Infiniteisolatedlayers.png" alt="drawing" width="1000" height="1000"/></p>
+<p>${\bf \Omega_{BAM}}$ = 
+$\begin{bmatrix} 
+V_B &amp; C_{BA} &amp; C_{BM} \\ 
+C_{AB} &amp; V_A &amp; C_{AM} \\ 
+C_{MB} &amp; C_{MA} &amp; V_M  
+\end{bmatrix}$</p>
+<p>$\mathbf{W}({\bf z})^{t}_{ix} = exp[-\gamma({\color{red}[{\bf z}^{t}_{ix} - {\bf \theta^{t}}_{ix}\color{red}]^T} {\bf \Omega_{BAM}}^{-1} {\color{red}[{\bf z}^{t}_{ix} - {\bf \theta^{t}}_{ix}\color{red}]})]$</p>
+<p>$
+\underbrace{\begin{bmatrix}
+ W({\bf z_{B}}^{t}_{ix})     \\
+ W({\bf z_{A}}^{t}_{ix})     \\
+ \vdots  \\
+ W({\bf z_{M}}^{t}_{ix})     \\
+            \end{bmatrix}
+          }_{\mathbf{W}}$
+           = $\underbrace{\begin{bmatrix}
+ W({B}^{t}_{ix})^{*}     \\
+ W({A}^{t}_{ix})^{*}     \\
+ \vdots  \\
+ W({M}^{t}_{ix})^{*}     \\
+            \end{bmatrix}^{T}
+             }_{\mathbf{W}}$
+$\underbrace{\begin{bmatrix}
+V_{B}       &amp;   C_{BA}       &amp; \dots     &amp;   C_{BM}       \\
+C_{AB}       &amp;   V_{A}       &amp; \dots     &amp;   C_{AM}       \\
+\vdots  &amp;  \vdots   &amp;   \vdots  &amp;   \vdots  \\   
+C_{MB}       &amp;   C_{MA}      &amp; \dots     &amp;   V_{M}       \\
+            \end{bmatrix}^{-1}
+            }_{\mathbf{\Omega_{BAM}}}$
+$\underbrace{\begin{bmatrix}
+W({B}^{t}_{ix})^{*}     \\
+W({A}^{t}_{ix})^{*}     \\
+\vdots  \\
+W({M}^{t}_{ix})^{*}     \\
+            \end{bmatrix}
+             }_{\mathbf{W}}$</p>
 
 </div>
 </div>
@@ -14715,43 +14752,7 @@ Paths to build theory in biodiversity research
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="Interlayer.png" alt="drawing" width="1000" height="1000"/></p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="InterlayerStrong.png" alt="drawing" width="1000" height="1000"/></p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="IntralayerStrong.png" alt="drawing" width="1000" height="1000"/></p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="lab.jpg" alt="drawing" width="700" height="700"/></p>
+<p><img src="trait_space.png" alt="drawing" width="500" height="500"/></p>
 
 </div>
 </div>
@@ -14764,10 +14765,10 @@ Paths to build theory in biodiversity research
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 \begin{equation}
-{\Large \partial_t\rho (\bf{Z},t) = -\nabla_{\bf{Z}} \big[\nabla_{\bf{Z}} F(\bf{Z},\bf{y_t})\rho(\bf{Z,t})\big]} 
-{\Large -r(\bf{Z},\bf{y_t})\rho(\bf{Z,t})} \nonumber
+{\Large \partial_t\rho (\bf{z},t) = -\nabla_{\bf{z}} \big[\nabla_{\bf{z}} F(\bf{z},\bf{y_t})\rho(\bf{z,t})\big]} 
+{\Large -r(\bf{z},\bf{y_t})\rho(\bf{z,t})} \nonumber
 \\
-{\Large+\int_{\Omega}\int_{\Omega}M(\bf{Z}|\bf{Z'},\bf{Z''})B(\bf{Z'},\bf{Z''})\rho(\bf{Z'},t)\rho(\bf{Z''},t)d^{d}\bf{Z'}d^{d}\bf{Z''}}
+{\Large+\int_{\Omega}\int_{\Omega}M(\bf{z}|\bf{z'},\bf{z''})B(\bf{z'},\bf{z''})\rho(\bf{z'},t)\rho(\bf{z''},t)d^{d}\bf{z'}d^{d}\bf{z''}}
 \end{equation}
 </div>
 </div>
@@ -14779,18 +14780,26 @@ Paths to build theory in biodiversity research
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="GPACovMat.jpg" alt="drawing" width="650" height="650"/></p>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="GPA">GPA<a class="anchor-link" href="#GPA">&#182;</a></h2><p>\begin{equation}
- {\Large \bf{z}_{j} = {f}(\bf{L}), {f}:\mathbb{R}^{m} \rightarrow \mathbb{R}^{z}}
+ {\Large \bf{z}_{j} = {f}(\bf{L}), {f}:\mathbb{R}^{m} \rightarrow \mathbb{R}^{z}} 
  \end{equation}</p>
 \begin{equation}
 {\Large \bf{Z} = {f}(\bf{L}) = D[{f}(L)]=\bf{B}\bf{Y}},
-\end{equation}<p>where</p>
-<p>$\bf{B}$ or the pleiotropy matrix size $(\bf{L}, \bf{Z})$</p>
-<p>$\bf{Y}$ expression array</p>
-<p>$\bf{E}$, epistasis matrix</p>
-<p>Individual’s phenotype is given by the vector $\bf{Z}$</p>
+\end{equation}<p>In this formulation, an individual’s phenotype is given by the vector $\bf{Z}$</p>
 \begin{equation}
-{\Large \bf{Z} = \bf{B}^{T} \bf{E}  \bf{Y} + \bf{\epsilon}},
+{\Large \bf{Z} = \bf{B}^{T} \bf{E}  \bf{Y}}
 \end{equation}
 </div>
 </div>
@@ -14804,7 +14813,7 @@ Paths to build theory in biodiversity research
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Abiotic-trait">Abiotic trait<a class="anchor-link" href="#Abiotic-trait">&#182;</a></h2>\begin{equation}
 {\Large D(z_{ia}) = \lvert 0.5 - cdf(\mathcal{N}(\theta_{a}, \sigma^2), z_{ia}) \lvert},
-\end{equation}<p>where $D(z_{ia})$ is the distance of abiotic trait of individual $i$ to its optimum, $\theta_{a}$ is the optimal value used as the mean of a normal distribution, $\sigma^{2}$ is the variance of the normal distribution, and $z_{ia}$ is the value of the abiotic trait $i$ and $cdf$ is cumulative distribution function. $D(z_{ia})$ is a probability and is calculated by the number of standard deviations that the agent's phenotype is different from the optimal phenotype. The fitness of the abiotic trait of individual $i$ is then given by</p>
+\end{equation}<p>where $D(z_{ia})$ is the distance of abiotic trait of individual $i$ to its optimum, $\theta_{a}$ is the optimal value used as the mean of a normal distribution, $\sigma^{2}$ is the variance of the normal distribution, and $z_{ia}$ is the value of the abiotic trait $i$ and $cdf$ is cumulative distribution function. The fitness of the abiotic trait of individual $i$ is then given by</p>
 \begin{equation}
 {\Large W(z_{ia}) = 1 - D(z_{ia})}
 \end{equation}
@@ -14820,11 +14829,10 @@ Paths to build theory in biodiversity research
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Biotic-trait">Biotic trait<a class="anchor-link" href="#Biotic-trait">&#182;</a></h2>\begin{equation}
 {\Large D_{z_{ib} z_{jb}} = \lvert 0.5 - cdf(\mathcal{N}(z_{ib}, \sigma^2), z_{jb}) \lvert}
-\end{equation}<p>where $D_{z_{ib} z_{jb}}$ is the distance between individual biotic phenotypes $i$ and $j$. $\sigma^2$ is the variance of a normal distribution. The larger the $\sigma^2$, the less significant are small phenotypic differences between the two individuals. If two individuals interact, their fitness increases or decreases depending on the nature of their species-species interactions, meaning how much an interaction affect each of the species is a function of their biology. The strength of an interaction is a function of species-species coefficient and the phenotypic distance between the two individuals
+\end{equation}<p>The strength of an interaction is a function of species-species coefficient and the phenotypic distance between the two individuals</p>
 \begin{equation}
 {\Large s_{z_{ib} z_{jb}} = (1 - D_{z_{ib} z_{jb}}) \times \lvert c_{z_{xb} z_{yb}} \lvert \times sign(c_{z_{xb} z_{yb}})}
-\end{equation}</p>
-
+\end{equation}
 </div>
 </div>
 </div>
@@ -14837,118 +14845,10 @@ Paths to build theory in biodiversity research
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Fitness">Fitness<a class="anchor-link" href="#Fitness">&#182;</a></h2>\begin{equation}
 {\Large W_{Z_{i}} = W_{z_{ia}} + s_{z_{ib} z_{jb}}},
-\end{equation}<p>and the fitness function takes into account the selection coefficient as
+\end{equation}<p>and the fitness function takes into account the selection coefficient as</p>
 \begin{equation}
 {\Large W_{Z_{i}} = 1 - ( (1 - W_{Z_{i}}) \times s_x)}
-\end{equation}</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="heatmaphh.png" alt="drawing" width="1000" height="1000"/></p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Take-home-message">Take home message<a class="anchor-link" href="#Take-home-message">&#182;</a></h2><ul>
-<li><p>Predict as old theory: Gene and trait distribution</p>
-<p>** Assumption: infinite loci with weak effects for a large number of genes and traits</p>
-</li>
-</ul>
-<ul>
-<li><p>New predictions for existing data: Complex GPA to diversification and biodiversity patterns</p>
-<p>** Assumption: Evolving pleiotropy, epistasis and regulation but still GPA can be unique</p>
-</li>
-</ul>
-<ul>
-<li><p>New predictions no data: Complex GPA in biodiversity seascapes</p>
-<p>** Assumption: Fitness gradients from trait hierarchy to heterarchy in complex multidimensional seascapes</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="GPA">GPA<a class="anchor-link" href="#GPA">&#182;</a></h2><p>\begin{equation}
- {\Large \bf{z}_{j} = {f}(\bf{L}), {f}:\mathbb{R}^{m} \rightarrow \mathbb{R}^{z}}
- \end{equation}</p>
-<p>Assuming the function \emph{f} is differentiable, we can take a linear approximation given by the differentiation of \emph{f}, which has been called $\bf{B}$ or the pleiotropy matrix ($\bf{B}$ has size $(\bf{L}, \bf{Z})$ with $\bf{L}$ rows and $\bf{Z}$ columns) \citep{Lande&amp;Arnold:1980,Wagner223,Pavlicev&amp;Hansen:2011,Melo&amp;Marroig:2014}. A linear function assuming alleles having additive effects becomes</p>
-\begin{equation}
-{\Large \bf{Z} = {f}(\bf{L}) = D[{f}(L)]=\bf{B}\bf{Y}},
-\end{equation}<p>where $\bf{B}[{b}_{ij}]$ is a binary matrix determining the presence/absence of influence of a particular locus, $l_{i}$ on a particular trait, $z_{j}$. If ${b}_{ij}$ is 1, locus $l_{i}$ influences additive trait $z_{j}$, and if it is 0, it does not \citep{Melo&amp;Marroig:2014}. The magnitude of effect of a gene on a trait is adjusted by the expression level of the gene, controlled by a expression array $\bf{Y}$. For an additional level of control, the epistasis matrix, $\bf{E}$, multiplies the pleiotropy matrix $\bf{B}$, meaning epistatic and pleiotropic interactions determine trait values. In this formulation, an individual’s phenotype is given by the vector $\bf{Z}$</p>
-\begin{equation}
-{\Large \bf{Z} = \bf{B}^{T} \bf{E}  \bf{Y} + \bf{\epsilon}},
-\end{equation}
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Abiotic-trait">Abiotic trait<a class="anchor-link" href="#Abiotic-trait">&#182;</a></h2>\begin{equation}
-{\Large D(z_{ia}) = \lvert 0.5 - cdf(\mathcal{N}(\theta_{a}, \sigma^2), z_{ia}) \lvert},
-\end{equation}<p>where $D(z_{ia})$ is the distance of abiotic trait of individual $i$ to its optimum, $\theta_{a}$ is the optimal value used as the mean of a normal distribution, $\sigma^{2}$ is the variance of the normal distribution, and $z_{ia}$ is the value of the abiotic trait $i$ and $cdf$ is cumulative distribution function. $D(z_{ia})$ is a probability and is calculated by the number of standard deviations that the agent's phenotype is different from the optimal phenotype. The fitness of the abiotic trait of individual $i$ is then given by</p>
-\begin{equation}
-{\Large W(z_{ia}) = 1 - D(z_{ia})}
-\end{equation}
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Biotic-trait">Biotic trait<a class="anchor-link" href="#Biotic-trait">&#182;</a></h2>\begin{equation}
-{\Large D_{z_{ib} z_{jb}} = \lvert 0.5 - cdf(\mathcal{N}(z_{ib}, \sigma^2), z_{jb}) \lvert}
-\end{equation}<p>where $D_{z_{ib} z_{jb}}$ is the distance between individual biotic phenotypes $i$ and $j$. $\sigma^2$ is the variance of a normal distribution. The larger the $\sigma^2$, the less significant are small phenotypic differences between the two individuals. If two individuals interact, their fitness increases or decreases depending on the nature of their species-species interactions, meaning how much an interaction affect each of the species is a function of their biology. The strength of an interaction is a function of species-species coefficient and the phenotypic distance between the two individuals
-\begin{equation}
-{\Large s_{z_{ib} z_{jb}} = (1 - D_{z_{ib} z_{jb}}) \times \lvert c_{z_{xb} z_{yb}} \lvert \times sign(c_{z_{xb} z_{yb}})}
-\end{equation}</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Fitness">Fitness<a class="anchor-link" href="#Fitness">&#182;</a></h2>\begin{equation}
-{\Large W_{Z_{i}} = W_{z_{ia}} + s_{z_{ib} z_{jb}}},
-\end{equation}<p>and the fitness function takes into account the selection coefficient as
-\begin{equation}
-{\Large W_{Z_{i}} = 1 - ( (1 - W_{Z_{i}}) \times s_x)}
-\end{equation}</p>
+\end{equation}<p></p>
 
 </div>
 </div>
@@ -14983,7 +14883,26 @@ Paths to build theory in biodiversity research
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="shannonIndex_regime_gen1001-1.png" alt="drawing" width="300" height="250"/></p>
+<p><img src="shannonIndex_regime_gen1001-1.png" alt="drawing" width="250" height="250"/></p>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Take-home-message">Take home message<a class="anchor-link" href="#Take-home-message">&#182;</a></h2><ul>
+<li><p>GPA connects pleiotropy, epistasis and gene regulation to the covariance matrix allowing to explore the connection between GPA-migration-mutation-recombination to diversification and diversity patterns</p>
+</li>
+<li><p>GPA with correlated traits impose constraints to coexistence -- integrated trait architecture decreases resource-consumer coexistence along migration and interaction strength gradients</p>
+</li>
+<li><p>Next test: GPA to diversification accounting for mating schemes</p>
+</li>
+</ul>
 
 </div>
 </div>
