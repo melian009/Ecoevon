@@ -1,0 +1,3 @@
+[submodule "CCSS2024/tag4copy/reveal.js"]
+	path = CCSS2024/tag4copy/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
